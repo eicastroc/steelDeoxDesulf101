@@ -1,6 +1,6 @@
-Micrografias de inclusiones de alumina, adquiridas mediante microscopia electrónica de barrido por Edgar Castro (2015).
+Micrographies of alumina inclusions, aquired using Scanning Electon Microscopy techniques.
 
-Trabajo de referencia:
+Reference:
 
 Castro-Cedeño, EI., Herrera-Trejo, M., Castro-Román, M. et al.
 Evaluation of Steel Cleanliness in a Steel Deoxidized Using Al. 
