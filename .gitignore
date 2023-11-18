@@ -1,0 +1,8 @@
+# Notebook cache
+.ipynb_checkpoints/
+
+# Temporary notebooks
+*.ipynb
+
+# Python virtual environment
+venv/
