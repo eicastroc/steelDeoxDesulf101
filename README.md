@@ -42,3 +42,7 @@ Then simply launch `jupyter-notebook` from a terminal and you should be ready to
 For those willing to work within VSCode, you can install extensions `Python` and `Jupyter` (both from Microsoft).
 
 The Python files above are written with the percent `%%` format allowing for execution as notebooks.
+
+## Citing
+
+For citing this work, please consider [this](CITATION.bib) bibliographic entry.
