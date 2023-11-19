@@ -6,7 +6,8 @@ Principles of steel deoxidation and desulfurization with pedagogic intents.
 
 ### English
 
-Coming soon...
+1. [Fundamentals of steel deoxidation](src/en/Deox.py)
+2. [Fundamentals of steel desulfurization](src/en/Desulf.py)
 
 ### French
 

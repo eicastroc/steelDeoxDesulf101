@@ -55,7 +55,7 @@ from scipy.integrate import solve_ivp
 #
 # $$ K_1 = \underbrace{\frac{a_{S^{2-}}}{a_{O^{2-}}}}_{no \,medible} \,\,\underbrace{\left(\frac{p_{O_2}}{p_{S_2}}\right)^{1/2}}_{medible}$$
 #
-# donde $a_{S^{2-}}$ y $a_{O^{2-}}$, son las actividades de los iones de azufre y oxígeno en la escoria (no medibles). $p_{S_2}$ y $p_{O_2}$, son las presiones parciales de oxígeno y azufre en la mezcla gaseosa (medibles).
+# donde $a_{S^{2-}}$ y $a_{O^{2-}}$, son las actividades de los iones de azufre y oxígeno en la escoria (no medibles). $p_{S_2}$ y $p_{O_2}$, son las presiones parciales de azufre y oxígeno en la mezcla gaseosa (medibles).
 
 # %% [markdown]
 # ### Definición de la capacidad de sulfuro
@@ -291,7 +291,7 @@ plt.show()
 #
 # $$\underbrace{1000 \left[\omega_S\right]_0 + M_{sl} \left(\omega_S\right)_0}_{estado \, inicial} = \underbrace{1000 \left[\omega_S\right] + M_{sl} \left(\omega_S\right)}_{estado \, final} $$
 #
-# donde $M_{sl}$ es la masa de escoria en kg por tonelada de acero, $[\omega_S]$ es la fracción másica de azufre en la escoria, y $(\omega_S)$ es la fracción másica de azufre en el metal.
+# donde $M_{sl}$ es la masa de escoria en kg por tonelada de acero, $(\omega_S)$ es la fracción másica de azufre en la escoria, y $[\omega_S]$ es la fracción másica de azufre en el metal.
 #
 # Una simplificación común en la ecuación consiste en ignorar el contenido de azufre en la escoria inicial:
 #
@@ -421,14 +421,14 @@ def plot_Msl_surf(Ls:float)->None:
 #
 
 # %%
-plot_Msl_surf(Ls = 100)
+plot_Msl_surf(Ls = 50)
 
 
 # %% [markdown]
 # ## Cálculo de la tasa de desulfuración
 
 # %% [markdown]
-# Como ya se mencionón, el proceso de desulfuración está pilotado por la transferencia de azufre en la interface metal-escoria.
+# Como ya se mencionó, el proceso de desulfuración está pilotado por la transferencia de azufre en la interface metal-escoria.
 #
 # $$ \left[ S \right] + \left( O^{2-} \right) = \left( S^{2-} \right) + \left[ O \right] \quad \quad Reac. 2$$ 
 #
@@ -452,7 +452,7 @@ plot_Msl_surf(Ls = 100)
 #
 # - $[\%S_0]$: contenido de azufre inicial.
 #
-# - $M_{sl}$: masa de escoria, en kg/ton.
+# - $M_{sl}$: masa de escoria, en [kg/ton].
 #
 # - $L_S$: coeficiente de reparto de azufre.
 
@@ -518,7 +518,7 @@ wS0 = 0.020 #valor inicial de azufre, [wt%]
 Msl = 20 # masa de escoria, kg/ton
 Ls = 50 # coeficiente de reparto
 
-# entrada para el resolvedor
+# entradas para el resolvedor
 tspan = (teval[0], teval[-1])
 c = [ks, wS0, Msl, Ls]
 
