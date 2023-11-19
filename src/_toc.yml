@@ -5,5 +5,5 @@ root: index
 parts:
   - caption: Español
     chapters:
-    - file: es/Deox
-    - file: es/Desulf
+    - file: src/es/Deox
+    - file: src/es/Desulf
