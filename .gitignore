@@ -6,3 +6,6 @@
 
 # Python virtual environment
 venv/
+
+# Jupyter book build
+_build/

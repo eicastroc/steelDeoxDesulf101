@@ -13,6 +13,13 @@
 #     name: python3
 # ---
 
+# %% [markdown]
+# # Fundamentos de desoxidación de aceros
+#
+# **Dr. Edgar Ivan Castro Cedeño**
+#
+# [edgar.castro@cinvestav.mx](mailto:edgar.castro@cinvestav.mx)
+
 # %%
 import numpy as np
 import pandas as pd
@@ -22,13 +29,6 @@ from scipy.optimize import fsolve
 import warnings
 warnings.filterwarnings('ignore')
 
-
-# %% [markdown]
-# # Fundamentos de desoxidación de aceros
-#
-# **Dr. Edgar Ivan Castro Cedeño**
-#
-# [edgar.castro@cinvestav.mx](mailto:edgar.castro@cinvestav.mx)
 
 # %% [markdown]
 # ## Contexto metalúrgico
@@ -385,5 +385,3 @@ plt.show()
 # [Wang, H. et al (2021)](https://www.sciencedirect.com/science/article/pii/S2238785421001873)  
 # Three-dimensional stability diagram of Al–Mg–O inclusions in molten steel.    
 # Journal of Materials Research and Technology, 12, 43-52.
-
-# %%

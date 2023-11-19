@@ -43,6 +43,26 @@ For those willing to work within VSCode, you can install extensions `Python` and
 
 The Python files above are written with the percent `%%` format allowing for execution as notebooks.
 
+## Creating book
+
+Implemented with [Jupyter Book](https://jupyterbook.org/).
+
+To build the project run the following from this directory
+
+```
+jupyter-book build --all --path-output=docs src
+```
+
+To generate a PDF build run
+
+```
+jupyter-book build --all --path-output=docs --builder pdflatex src
+```
+
+Relevant documentation:
+- [Configuration file](https://jupyterbook.org/customize/config.html)
+- [Table of contents](https://jupyterbook.org/customize/toc.html)
+
 ## Citing
 
 For citing this work, please consider [this](CITATION.bib) bibliographic entry.
