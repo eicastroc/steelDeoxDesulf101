@@ -13,6 +13,10 @@ Principles of steel deoxidation and desulfurization with pedagogic intents.
 
 Coming soon...
 
+### Portuguese
+
+Coming soon...
+
 ### Spanish
 
 1. [Fundamentos de desoxidación de aceros](src/es/Deox.py)
@@ -20,9 +24,11 @@ Coming soon...
 
 ## Usage
 
-To run the notebooks you need an install of the [Python](https://www.python.org/) programming language.
+To run the notebooks you need an install of the
+[Python](https://www.python.org/) programming language.
 
-To setup the environment in a reproducible way, first create a local environment by running in command line:
+To setup the environment in a reproducible way, first create a local environment
+by running in command line:
 
 ```bash
 # Install the `virtualenv` package
@@ -38,11 +44,34 @@ python -m virtualenv venv
 pip install -r requirements.txt 
 ```
 
-Then simply launch `jupyter-notebook` from a terminal and you should be ready to work in your browser.
+Then simply launch `jupyter-notebook` from a terminal and you should be ready to
+work in your browser.
 
-For those willing to work within VSCode, you can install extensions `Python` and `Jupyter` (both from Microsoft).
+For those willing to work within VSCode, you can install extensions `Python` and
+`Jupyter` (both from Microsoft).
 
-The Python files above are written with the percent `%%` format allowing for execution as notebooks.
+The Python files above are written with the percent `%%` format allowing for
+execution as notebooks.
+
+## Creating book
+
+Implemented with [Jupyter Book](https://jupyterbook.org/). To build the project
+run the following from this directory:
+
+```bash
+# Convert documents to MyST markdown format (JupyterBook requirement).
+jupytext --to myst src/*/*.py
+
+# Generate HTML.
+jupyter-book build --all --builder=html     src/
+
+# Generate PDF.
+jupyter-book build --all --builder=pdflatex src/
+```
+
+Relevant documentation:
+- [Configuration file](https://jupyterbook.org/customize/config.html)
+- [Table of contents](https://jupyterbook.org/customize/toc.html)
 
 ## Citing
 

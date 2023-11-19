@@ -1,0 +1,22 @@
+title: steelDeoxDesulf101
+author: Dr. Edgar Ivan Castro Cedeño
+logo: images/logo.png
+
+execute:
+  execute_notebooks: force
+
+latex:
+  latex_documents:
+    targetname: book.tex
+
+bibtex_bibfiles:
+  - references.bib
+
+repository:
+  url: https://github.com/eicastroc/steelDeoxDesulf10
+  path_to_book: .
+  branch: gh-pages
+
+html:
+  use_issues_button: false
+  use_repository_button: false

@@ -1,0 +1,14 @@
+format: jb-book
+
+root: index
+
+parts:
+  - caption: English
+    chapters:
+    - file: en/Deox
+    - file: en/Desulf
+  
+  - caption: Español
+    chapters:
+    - file: es/Deox
+    - file: es/Desulf

@@ -13,6 +13,13 @@
 #     name: python3
 # ---
 
+# %% [markdown]
+# # Fundamentos de desoxidación de aceros
+#
+# **Dr. Edgar Ivan Castro Cedeño**
+#
+# [edgar.castro@cinvestav.mx](mailto:edgar.castro@cinvestav.mx)
+
 # %%
 import numpy as np
 import pandas as pd
@@ -22,13 +29,6 @@ from scipy.optimize import fsolve
 import warnings
 warnings.filterwarnings('ignore')
 
-
-# %% [markdown]
-# # Fundamentos de desoxidación de aceros
-#
-# **Dr. Edgar Ivan Castro Cedeño**
-#
-# [edgar.castro@cinvestav.mx](mailto:edgar.castro@cinvestav.mx)
 
 # %% [markdown]
 # ## Contexto metalúrgico
