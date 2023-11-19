@@ -1,7 +1,7 @@
 # ---
 # jupyter:
 #   jupytext:
-#     formats: ipynb,py:percent
+#     formats: py:percent
 #     text_representation:
 #       extension: .py
 #       format_name: percent
@@ -385,5 +385,3 @@ plt.show()
 # [Wang, H. et al (2021)](https://www.sciencedirect.com/science/article/pii/S2238785421001873)  
 # Three-dimensional stability diagram of Al–Mg–O inclusions in molten steel.    
 # Journal of Materials Research and Technology, 12, 43-52.
-
-# %%
