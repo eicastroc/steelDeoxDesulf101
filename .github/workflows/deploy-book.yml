@@ -22,7 +22,7 @@ jobs:
 
     - name: Build the book
       run: |
-        jupyter-book build --all --path-output=docs src
+        jupyter-book build --all --path-output=docs --builder=html src
 
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3.6.1
