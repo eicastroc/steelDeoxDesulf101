@@ -2,7 +2,7 @@
 
 Principles of steel deoxidation and desulfurization with pedagogic intents.
 
-Course contents can be accessed [here](eicastroc.github.io/steelDeoxDesulf101/).
+Course contents can be accessed [here](https://eicastroc.github.io/steelDeoxDesulf101/index.html).
 
 ## Contents
 
