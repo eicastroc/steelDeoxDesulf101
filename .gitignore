@@ -7,5 +7,8 @@
 # Python virtual environment
 venv/
 
+# Converted MyST
+src/*/*.md
+
 # Jupyter book build
 _build/

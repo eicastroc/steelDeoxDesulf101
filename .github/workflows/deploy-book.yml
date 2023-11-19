@@ -22,10 +22,11 @@ jobs:
 
     - name: Build the book
       run: |
-        jupyter-book build --all --path-output=docs --builder=html src
+        jupytext --to myst src/es/*.py
+        jupyter-book build --all --builder=html src
 
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs/_build/html
+        publish_dir: src/_build/html
