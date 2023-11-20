@@ -302,9 +302,9 @@ def data_deox(func, T, pcts_M, a_MxOy, x0, order, bound):
 # ### Experimental data
 
 # %% [markdown]
-# En toda aplicación, siempre es buena práctica comparar los resultados de cualquier modelo con mediciones experimentales.
+# For any application of amodel, it is always a good practice to compare the results of the model against experimental data.
 #
-# Debajo se utilizan fuciones delibrería la librería `pandas` para leer un archivo que contiene datos experimentales de equilibrio aluminio-oxígeno en baños de acero tomados de 12 fuentes diferentes en la literatura.
+# Below, the `pandas` library is used to read a file that contains experimental data of aluminium-oxygen equilibrium in steel baths, taken from 12 different references.
 
 # %%
 # Experimental data
