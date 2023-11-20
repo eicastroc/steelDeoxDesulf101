@@ -5,7 +5,12 @@ on:
     branches:
     - main
 
+permissions:
+  contents: read
+  pages: write
+  
 jobs:
+
   deploy-book:
     runs-on: ubuntu-latest
     steps:
