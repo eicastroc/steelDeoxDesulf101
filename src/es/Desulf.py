@@ -1,7 +1,7 @@
 # ---
 # jupyter:
 #   jupytext:
-#     formats: ipynb,py:percent
+#     formats: py:percent
 #     text_representation:
 #       extension: .py
 #       format_name: percent
@@ -13,18 +13,18 @@
 #     name: python3
 # ---
 
-# %%
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.integrate import solve_ivp
-
-
 # %% [markdown]
 # # Fundamentos de desulfuración de aceros
 #
 # **Dr. Edgar Ivan Castro Cedeño**
 #
 # [edgar.castro@cinvestav.mx](mailto:edgar.castro@cinvestav.mx)
+
+# %%
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
 
 # %% [markdown] jp-MarkdownHeadingCollapsed=true
 # ## Contexto metalúrgico

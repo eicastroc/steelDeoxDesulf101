@@ -1,3 +1,4 @@
+jupyter-book==0.15.1
 jupytext==1.15.2
 notebook==6.4.12
 numpy==1.26.1
