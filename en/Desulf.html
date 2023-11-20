@@ -1,0 +1,1009 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Fundamentals of steel desulfurization &#8212; steelDeoxDesulf101</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'en/Desulf';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fundamentos de desoxidación de aceros" href="../es/Deox.html" />
+    <link rel="prev" title="Fundamentals of steel deoxidation" href="Deox.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="steelDeoxDesulf101 - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="steelDeoxDesulf101 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    steelDeoxDesulf101
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">English</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Deox.html">Fundamentals of steel deoxidation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Fundamentals of steel desulfurization</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Español</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../es/Deox.html">Fundamentos de desoxidación de aceros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../es/Desulf.html">Fundamentos de desulfuración de aceros</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/en/Desulf.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fundamentals of steel desulfurization</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metallurgical-context">Metallurgical context</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sulfide-capacity-cs">Sulfide capacity, Cs.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measurements-of-equilibrium-sulfur-content-in-slags">Measurements of equilibrium sulfur content in slags</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sulfide-capacity-definition">Sulfide capacity definition</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modified-sulfide-capacity-cs">Modified sulfide capacity, Cs’.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sulfur-exchange-reaction-between-steel-and-slag">Sulfur exchange reaction between steel and slag</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modified-sulfide-capacity-definition">Modified sulfide capacity definition</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relating-cs-and-cs">Relating Cs and Cs’</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-of-the-oxygen-sulfur-relation-from-a-ratio-of-partial-pressure-to-a-ratio-of-solute-activities">Conversion of the oxygen/sulfur relation, from a ratio of partial pressure to a ratio of solute activities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ratio-between-cs-and-cs">ratio between Cs’ and Cs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sulfur-partition-ratio-ls">Sulfur partition ratio, Ls</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-between-the-sulfur-partition-ratio-and-the-sulfide-capacity">Relation between the sulfur partition ratio and the sulfide capacity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metallurgical-implications">Metallurgical implications</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-slag-amount">Effect of slag amount</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sulfur-balance">Sulfur balance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sulfur-balance-in-terms-of-the-partition-coefficient-and-the-slag-mass">Sulfur balance in terms of the partition coefficient and the slag mass</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Metallurgical implications</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculation-of-the-desulfurization-rate">Calculation of the desulfurization rate</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equation-for-the-desulfurization-rate">Differential equation for the desulfurization rate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-of-the-differential-equation-with-a-numerical-method">Solution of the differential equation with a numerical method</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further reading</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="fundamentals-of-steel-desulfurization">
+<h1>Fundamentals of steel desulfurization<a class="headerlink" href="#fundamentals-of-steel-desulfurization" title="Permalink to this heading">#</a></h1>
+<p><strong>Dr. Edgar Ivan Castro Cedeño</strong></p>
+<p><a class="reference external" href="mailto:edgar&#46;castro&#37;&#52;&#48;cinvestav&#46;mx">edgar<span>&#46;</span>castro<span>&#64;</span>cinvestav<span>&#46;</span>mx</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="metallurgical-context">
+<h2>Metallurgical context<a class="headerlink" href="#metallurgical-context" title="Permalink to this heading">#</a></h2>
+<p>Generally spearking, sulfur is considered as a nocive element in steel, hence, it is necessary to control it during the steelmaking process</p>
+<p>This document focuses on presenting some basic concepts of steel desulfurization, and applying them in studying the process of secondary refining of steel.</p>
+</section>
+<section id="sulfide-capacity-cs">
+<h2>Sulfide capacity, Cs.<a class="headerlink" href="#sulfide-capacity-cs" title="Permalink to this heading">#</a></h2>
+<p>The sulfide capacity, <span class="math notranslate nohighlight">\(C_S\)</span>, is a widely used concept in pyrometallurgy, the defines the capacity of an homogeneous molten slag for removing sulfur from the bath during the metal refining operations.</p>
+<p>It is considered that sulfide capacity is a property that is unique to every slag, and that it depends on its chemical composition and temperature. There exist several models in litterature that allow to estimate sulfide capacity as a function of these paremeters.</p>
+<p>The sulfide capacity concept allow to compare under the same workframe, the desulfurization capability of different slag systems.</p>
+<section id="measurements-of-equilibrium-sulfur-content-in-slags">
+<h3>Measurements of equilibrium sulfur content in slags<a class="headerlink" href="#measurements-of-equilibrium-sulfur-content-in-slags" title="Permalink to this heading">#</a></h3>
+<p>The capability of a slag for dissolving sulfur, <span class="math notranslate nohighlight">\(S^{2-}\)</span>, can be determined by means of equilibration experiments between a molten slag and an oxygen-sulfur gas mixture at a fixed temperature. The studied equilibrium reaction is:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{1}{2} S_2(g) + \left(O^{2-}\right)_{slag} = \frac{1}{2} O_2(g) + \left(S^{2-}\right)_{slag} \quad\quad Reac. 1\]</div>
+<div class="math notranslate nohighlight">
+\[ K_1 = \underbrace{\frac{a_{S^{2-}}}{a_{O^{2-}}}}_{non-measurable} \,\,\underbrace{\left(\frac{p_{O_2}}{p_{S_2}}\right)^{1/2}}_{measurable}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a_{S^{2-}}\)</span> and <span class="math notranslate nohighlight">\(a_{O^{2-}}\)</span>, are the activities of the sulfide and oxygen ions (non-measurable). <span class="math notranslate nohighlight">\(p_{S_2}\)</span> y <span class="math notranslate nohighlight">\(p_{O_2}\)</span>, are partial pressures of sulfur and oxygen in the gas mixture (measurable).</p>
+</section>
+<section id="sulfide-capacity-definition">
+<h3>Sulfide capacity definition<a class="headerlink" href="#sulfide-capacity-definition" title="Permalink to this heading">#</a></h3>
+<p>Sulfide capacity, as defined by <a class="reference external" href="https://royalsocietypublishing.org/doi/10.1098/rspa.1954.0099">Finchan &amp; Richardson</a>, is obtained after algebraic manipulation of the terms in the equilibrium constant for Reaction 1, in a manner that it can be estimated from measurable quantities.</p>
+<div class="math notranslate nohighlight">
+\[ C_S = \underbrace{K_1 \frac{a_{O^{2-}}}{f_{S^{2-}}}}_{non-measurable} = \underbrace{\left(\%S\right)_{slag} \left(\frac{p_{O_2}}{p_{S_2}}\right)^{1/2}}_{measurable} \]</div>
+<p>It is considered that the activity of the sulfide ion is given by: <span class="math notranslate nohighlight">\(a_{S^{2-}} = f_{S^{2-}} \left(\%S\right)_{slag}\)</span>.</p>
+</section>
+</section>
+<section id="modified-sulfide-capacity-cs">
+<h2>Modified sulfide capacity, Cs’.<a class="headerlink" href="#modified-sulfide-capacity-cs" title="Permalink to this heading">#</a></h2>
+<p>The modified sulfide capacity, <span class="math notranslate nohighlight">\(C_S'\)</span>, is an extension of the sulfide capacity concept, which allows to directly apply it for the case of refining of molten metals and alloys (in this case, steels).</p>
+<section id="sulfur-exchange-reaction-between-steel-and-slag">
+<h3>Sulfur exchange reaction between steel and slag<a class="headerlink" href="#sulfur-exchange-reaction-between-steel-and-slag" title="Permalink to this heading">#</a></h3>
+<p>The sulfur exchange between steel and slag is driven by a ionic reaction at the interface between steel and slag:</p>
+<div class="math notranslate nohighlight">
+\[ \left[ S \right] + \left( O^{2-} \right) = \left( S^{2-} \right) + \left[ O \right] \quad \quad Reac. 2\]</div>
+<div class="math notranslate nohighlight">
+\[ K_2 = \underbrace{\frac{ \left( a_{S^{2-}}\right) }{ \left( a_{O^{2-}}\right)  }}_{no \, medible} \,\, \underbrace{\frac{\left[h_O\right] }{\left[h_S\right]}}_{medible}\]</div>
+</section>
+<section id="modified-sulfide-capacity-definition">
+<h3>Modified sulfide capacity definition<a class="headerlink" href="#modified-sulfide-capacity-definition" title="Permalink to this heading">#</a></h3>
+<p>The modified sulfide capacity definition is obtained after algebraic manipulation of the equilibrium constant for Reaction 2.</p>
+<div class="math notranslate nohighlight">
+\[ C_S' = \underbrace{K_2 \frac{a_{O^{2-}}}{f_{S^{2-}}}}_{no \, medible} = \underbrace{\left(\%S\right) \frac{\left[h_O\right]}{\left[h_S\right]}}_{medible} \]</div>
+<p>The activity of the sulfide ion in the slag is given by: <span class="math notranslate nohighlight">\(a_{S^{2-}} = f_{S^{2-}} \left(\%S\right)_{slag}\)</span>.</p>
+<p>The activities of sulfur and oxygen in the metal are given by: <span class="math notranslate nohighlight">\(h_S = f_S [\%S]\)</span>, <span class="math notranslate nohighlight">\(h_O = f_O [\%O]\)</span>.</p>
+</section>
+</section>
+<section id="relating-cs-and-cs">
+<h2>Relating Cs and Cs’<a class="headerlink" href="#relating-cs-and-cs" title="Permalink to this heading">#</a></h2>
+<p>In order to enable the use of the sulfide capacity concept for estimations of the desulfurizing power of a slag in secondary refining of steel, it is necessary to find the functional relation between <span class="math notranslate nohighlight">\(C_S\)</span>, which is obtained from results of equilibrium experiments between molten slags and gas mixtures; and <span class="math notranslate nohighlight">\(C_S'\)</span>, which represents the metal processing conditions.</p>
+<section id="conversion-of-the-oxygen-sulfur-relation-from-a-ratio-of-partial-pressure-to-a-ratio-of-solute-activities">
+<h3>Conversion of the oxygen/sulfur relation, from a ratio of partial pressure to a ratio of solute activities<a class="headerlink" href="#conversion-of-the-oxygen-sulfur-relation-from-a-ratio-of-partial-pressure-to-a-ratio-of-solute-activities" title="Permalink to this heading">#</a></h3>
+<p>The combined reaction of dissolution of oxygen and sulfur in liquid steel is given by:</p>
+<div class="math notranslate nohighlight">
+\[\left[S\right] + \frac{1}{2} \left\{O_2\right\} = \frac{1}{2} \left\{S_2\right\} + \left[O\right] \quad \quad Reac. 3\]</div>
+<div class="math notranslate nohighlight">
+\[K_3 = \frac{\left[h_o\right]}{\left[h_s\right]} \left(\frac{p_{S_2}}{p_{O_2}}\right)^{1/2}\]</div>
+<p>Through algebraic manipulation, an expression for the ratio of the oxygen and sulfur activities in the metal is found:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\left[h_o\right]}{\left[h_s\right]}  = K_3 \left(\frac{p_{O_2}}{p_{S_2}}\right)^{1/2}\]</div>
+<p>Substituting this expression in the definition of <span class="math notranslate nohighlight">\(C_S'\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ C_S' = \underbrace{\left(\%S\right)  \left(\frac{p_{O_2}}{p_{S_2}}\right)^{1/2}}_{C_S} K_3\]</div>
+<p>According to <a class="reference external" href="https://www.jstage.jst.go.jp/article/isijinternational1989/39/11/39_11_1140/_pdf">Andersson, Jönsson &amp; Nzotta</a>, the value of the equilibrium constant for this reaction has the value:</p>
+<div class="math notranslate nohighlight">
+\[\log K_3 = -\frac{935}{T} + 1.375\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">logK3</span><span class="p">(</span><span class="n">T</span><span class="p">:</span><span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    log Equilibrium constant for sulfur-oxygen </span>
+<span class="sd">    dissolution reaction (Reac. 3)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    T : Float</span>
+<span class="sd">        Temperature, in [K].</span>
+<span class="sd">        </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">        Float</span>
+<span class="sd">        logarithm base 10 of equilibrium constant for Reac. 3</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mf">935.0</span><span class="o">/</span><span class="n">T</span> <span class="o">+</span> <span class="mf">1.375</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ratio-between-cs-and-cs">
+<h3>ratio between Cs’ and Cs<a class="headerlink" href="#ratio-between-cs-and-cs" title="Permalink to this heading">#</a></h3>
+<p>Using the thermodynamic data for Reaction 3, defined in the function <code class="docutils literal notranslate"><span class="pre">logK3()</span></code>, the plot below is built, which shows the value of the ratio for a range of temperatures between <span class="math notranslate nohighlight">\(1300 \, ^\circ C\)</span> and <span class="math notranslate nohighlight">\(1600 \, ^\circ C\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig0</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax0</span> <span class="o">=</span> <span class="n">fig0</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+<span class="n">Tc0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1300</span><span class="p">,</span> <span class="mi">1700</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">Tk0</span> <span class="o">=</span> <span class="n">Tc0</span> <span class="o">+</span> <span class="mf">273.15</span>
+
+<span class="c1"># Plot lines</span>
+<span class="n">ratioISIJ0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">logK3</span><span class="p">(</span><span class="n">Tk0</span><span class="p">))</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Tc0</span><span class="p">,</span> <span class="n">ratioISIJ0</span><span class="p">)</span>
+
+<span class="n">ax0</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Temperatura [°C]&quot;</span><span class="p">)</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$C_S&#39; \, / C_S$&quot;</span><span class="p">)</span>
+
+<span class="n">ax0</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/674becf06a2d54d9a03a7cfdab4fb781d9b9b9147ddb8f1eda5b2db0dd675aeb.png" src="../_images/674becf06a2d54d9a03a7cfdab4fb781d9b9b9147ddb8f1eda5b2db0dd675aeb.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="sulfur-partition-ratio-ls">
+<h2>Sulfur partition ratio, Ls<a class="headerlink" href="#sulfur-partition-ratio-ls" title="Permalink to this heading">#</a></h2>
+<p>The sulfur partition ratio, <span class="math notranslate nohighlight">\(L_S\)</span>, represents the ratio between sulfur contained in the slag and sulfur contained in the metal, under thermodynamic equilibrium conditions.</p>
+<div class="math notranslate nohighlight">
+\[L_S = \frac{(\%S)}{[\%S]} \quad \quad Equilibrio\]</div>
+<p>Since measurements of sulfur content in the metal and the slag are relatively easy to perform in the steelshop, it is a commonly used KPI for the steelmaking process. Nevertheless, the metallurgist should remember that steelmaking is a highly transient process, and more often than not the process conditions are out of equilibrium at the time at which sampling is performed.</p>
+<div class="math notranslate nohighlight">
+\[L_{S_{(planta)}} = \frac{(\%S)}{[\%S]} \quad \quad Fuera \, del \, equilibrio\]</div>
+<section id="relation-between-the-sulfur-partition-ratio-and-the-sulfide-capacity">
+<h3>Relation between the sulfur partition ratio and the sulfide capacity<a class="headerlink" href="#relation-between-the-sulfur-partition-ratio-and-the-sulfide-capacity" title="Permalink to this heading">#</a></h3>
+<p>Starting from the definition of the modified sulfide capacity, and the sulfur activity in the metal, given by <span class="math notranslate nohighlight">\(h_S = f_S [\%S]\)</span>, one has:</p>
+<div class="math notranslate nohighlight">
+\[ C_S' =  \frac{(\%S)}{[\%S]} \frac{h_O}{f_S} = L_S \frac{h_O}{f_S}\]</div>
+<p>Applying logarithm law and reodering the equation a more useful form of the equation is obtained:</p>
+<div class="math notranslate nohighlight">
+\[\log L_S = \log C_S' + \log f_S - \log h_O\]</div>
+<p>This equation can also be written in terms of the sulfide capacity, <span class="math notranslate nohighlight">\(C_S\)</span>, which are the kind of data that are readily available in the litterature and in models:</p>
+<div class="math notranslate nohighlight">
+\[\log L_S = \log C_S -\frac{935}{T} + 1.375 + \log f_S - \log h_O\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">logLs</span><span class="p">(</span><span class="n">Cs</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">T</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">fs</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">ho</span><span class="p">:</span><span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    log of Sulfur partition coefficient Ls</span>
+<span class="sd">        Ls = (%S)/[%S]</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    Cs: Float</span>
+<span class="sd">        Sulfide capacity of the slag, in [wt%]</span>
+<span class="sd">    T : Float</span>
+<span class="sd">        Temperature, in [K].</span>
+<span class="sd">    fs: Float</span>
+<span class="sd">        Henrian activity coefficient, for sulfur</span>
+<span class="sd">    ho: Float</span>
+<span class="sd">        Henrian activity, for oxygen [wt%]</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">        Float</span>
+<span class="sd">        logarithm base 10 of sulfur partition coefficient</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">Cs</span><span class="p">)</span> <span class="o">+</span> <span class="n">logK3</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">fs</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">ho</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="metallurgical-implications">
+<h3>Metallurgical implications<a class="headerlink" href="#metallurgical-implications" title="Permalink to this heading">#</a></h3>
+<p>The equation above allows to put in evidence some strategies to follow in order to maximize the sulfur partition coefficient:</p>
+<ol class="arabic simple">
+<li><p>Slag conditioning and temperature control, to obtain a slag with good sulfide capacity, <span class="math notranslate nohighlight">\(C_S\)</span>.</p></li>
+<li><p>Bath deoxidation, to reduce the activity of oxygen in the metal, <span class="math notranslate nohighlight">\(h_O\)</span>.</p></li>
+</ol>
+<p>These can be seen when analyzing the function <code class="docutils literal notranslate"><span class="pre">logLs()</span></code>, defined below, which is plotted for different sulfide capacities, <span class="math notranslate nohighlight">\(C_S\)</span>, and oxygen activities, <span class="math notranslate nohighlight">\(h_O\)</span>, keeping fixed the temperature <span class="math notranslate nohighlight">\((T = 1600 ^\circ C\)</span>), and the Henrian activity coefficient for sulfur <span class="math notranslate nohighlight">\((f_S = 1)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+<span class="n">_ao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">_T1</span> <span class="o">=</span> <span class="mf">1873.15</span> <span class="c1"># 1600 C</span>
+<span class="n">_fs</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Plot lines</span>
+<span class="n">_CS</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1e-4</span><span class="p">,</span> <span class="mf">1e-3</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">,</span> <span class="mf">1e-1</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">Cs</span> <span class="ow">in</span> <span class="n">_CS</span><span class="p">:</span>
+    <span class="n">_Lsline</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">logLs</span><span class="p">(</span><span class="n">Cs</span><span class="p">,</span> <span class="n">_T1</span><span class="p">,</span> <span class="n">_fs</span><span class="p">,</span> <span class="n">_ao</span><span class="p">))</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;Cs=&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">Cs</span><span class="p">)])</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">_ao</span><span class="p">,</span> <span class="n">_Lsline</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+
+<span class="c1"># Format graph</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1e4</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Actividad Henriana de oxígeno, $h_O$  [wt%]&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Coeficiente de reparto de azufre, $L_S$&quot;</span><span class="p">)</span>
+
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c7ad9228741c3c8f92beb69ebb93a651d395f9f07386edbc159ac54499c9175d.png" src="../_images/c7ad9228741c3c8f92beb69ebb93a651d395f9f07386edbc159ac54499c9175d.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="effect-of-slag-amount">
+<h2>Effect of slag amount<a class="headerlink" href="#effect-of-slag-amount" title="Permalink to this heading">#</a></h2>
+<p>Once the metallurgical impact of good slag conditioning <span class="math notranslate nohighlight">\((C_S)\)</span> and bath deoxidation (<span class="math notranslate nohighlight">\(h_O\)</span>), the effect of the slag amounts used in the refining process, <span class="math notranslate nohighlight">\(M_{sl}\)</span> should be quantified. The first step is to perform a stell and slag sulfur mass balance.</p>
+<section id="sulfur-balance">
+<h3>Sulfur balance<a class="headerlink" href="#sulfur-balance" title="Permalink to this heading">#</a></h3>
+<p>The steel-slag sulfur mass balance, normalized per 1000 kg (1 tonne) of steel, is given by:</p>
+<div class="math notranslate nohighlight">
+\[\underbrace{1000 \left[\omega_S\right]_0 + M_{sl} \left(\omega_S\right)_0}_{initial \, state} = \underbrace{1000 \left[\omega_S\right] + M_{sl} \left(\omega_S\right)}_{final \, state} \]</div>
+<p>where <span class="math notranslate nohighlight">\(M_{sl}\)</span> is the slag mass given in kg per tonne of steel, <span class="math notranslate nohighlight">\((\omega_S)\)</span> is the mass fraction of sulfur in the slag, and <span class="math notranslate nohighlight">\([\omega_S]\)</span> is the mass fraction of sulfur in the metal.</p>
+<p>A common simplified approach consists in neglecting the sulfur contained in the initial slag.</p>
+<div class="math notranslate nohighlight">
+\[\underbrace{1000 \left[\omega_S\right]_0}_{initial \, state} = \underbrace{1000 \left[\omega_S\right] + M_{sl} \left(\omega_S\right)}_{final \, state} \]</div>
+</section>
+<section id="sulfur-balance-in-terms-of-the-partition-coefficient-and-the-slag-mass">
+<h3>Sulfur balance in terms of the partition coefficient and the slag mass<a class="headerlink" href="#sulfur-balance-in-terms-of-the-partition-coefficient-and-the-slag-mass" title="Permalink to this heading">#</a></h3>
+<p>With some algebraic manipulation the sulfur balance an be rewritten in terms of the sulfur partition coefficient, <span class="math notranslate nohighlight">\(L_S\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[1000 \frac{\left[\omega_S\right]_0}{\left[\omega_S\right]} = 1000 + M_{sl} \underbrace{\frac{\left(\omega_S\right)}{\left[\omega_S\right]}}_{L_S} \]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\left[\omega_S\right]_0}{\left[\omega_S\right]} = 1 + \frac{M_{sl}}{1000} L_S \]</div>
+<p>This function allows to estimate the sulfur content once the metal=slag equilibrium has been reached, this is, the thermodynamic limit for the desulfurization process.</p>
+<p><strong>Ratio of the equilibrium and initial sulfur contents in the metal:</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{\left[\omega_S \right]}{\left[\omega_S\right]_0} = \frac{1}{1 + \frac{M_{sl}}{1000} L_S} \]</div>
+<p><strong>Desulfurization progress once the equilibrium conditions have been reached:</strong></p>
+<div class="math notranslate nohighlight">
+\[R_S =  \left(1 - \frac{[\omega_S]}{[\omega_S]_0} \right) \times 100 \%\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">desulfRatio</span><span class="p">(</span><span class="n">Msl</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">Ls</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Ratio of equilibrium and initial sulfur contents in the metal</span>
+<span class="sd">    as given by a sulfur mass balance.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    Msl: Float</span>
+<span class="sd">         kg of molten slag per ton of metal, [kg/ton]</span>
+<span class="sd">    Ls : Float</span>
+<span class="sd">         Sulfur partition coefficient, Ls=(%S)/[%S]</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">        Float</span>
+<span class="sd">        Ratio of equilibrium and initial sulfur contents in the metal</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">Msl</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span> <span class="o">*</span> <span class="n">Ls</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h3>Metallurgical implications<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>The equation allows to estimate the maximum desulfurization progress (thermodynamic limit) that is possible in a process for which the slag amount, <span class="math notranslate nohighlight">\(M_{sl}\)</span>, and the sulfur partition coefficient, <span class="math notranslate nohighlight">\(L_S\)</span>, are known.</p>
+<p>The estimations can be seen with the function <code class="docutils literal notranslate"><span class="pre">desulfRatio()</span></code>, which is plotted for different amounts of slag, <span class="math notranslate nohighlight">\(M_{sl}\)</span> and sulfur partition coefficients, <span class="math notranslate nohighlight">\(L_S\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig2</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+<span class="n">_Msl2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">61</span><span class="p">)</span>
+
+<span class="c1"># Plot lines</span>
+<span class="n">_Ls2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">800</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">Ls</span> <span class="ow">in</span> <span class="n">_Ls2</span><span class="p">:</span>
+    <span class="n">_pctDesulf</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">desulfRatio</span><span class="p">(</span><span class="n">_Msl2</span><span class="p">,</span> <span class="n">Ls</span><span class="p">))</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">r</span><span class="s2">&quot;$L_S$=&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">Ls</span><span class="p">)])</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">_Msl2</span><span class="p">,</span> <span class="n">_pctDesulf</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+
+<span class="c1"># Format graph</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1e4</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Masa específica de escoria fundida, [kg/ton]&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Porcentaje de desulfuración al alcanzar el equilibrio&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1443f962a37c6e1b1d5e4dea56785e034143b4c8ba5c00d8ce5ac884461b252b.png" src="../_images/1443f962a37c6e1b1d5e4dea56785e034143b4c8ba5c00d8ce5ac884461b252b.png" />
+</div>
+</div>
+<p>Starting form the equation of the ratio of sulfur contents, reponse surfaces for the amount of required slag, <span class="math notranslate nohighlight">\(M_{sl}\)</span>, for obtaining a given equilibrium sulfur amount <span class="math notranslate nohighlight">\([\omega_S]\)</span>, starting from given initial sulfur content, <span class="math notranslate nohighlight">\([\omega_S]_0\)</span>, and sulfur partition ratio, <span class="math notranslate nohighlight">\(L_S\)</span>.</p>
+<p>This calculation is implemented in the function <code class="docutils literal notranslate"><span class="pre">plot_Msl_surf()</span></code>, which allows to produce the graph shown below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Msl_surf</span><span class="p">(</span><span class="n">Sini</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">Sfin</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">Ls</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Masa de escoria [kg/ton] requerida para remocion de azufre</span>
+<span class="sd">        Sini: Azufre inicial</span>
+<span class="sd">        Sfin: Azufre final (equilibrio)</span>
+<span class="sd">        Ls: coeficiente de reparto de azufre</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mi">1000</span><span class="o">/</span><span class="n">Ls</span> <span class="o">*</span> <span class="p">(</span><span class="n">Sini</span><span class="o">/</span><span class="n">Sfin</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">plot_Msl_surf</span><span class="p">(</span><span class="n">Ls</span><span class="p">:</span><span class="nb">float</span><span class="p">)</span><span class="o">-&gt;</span><span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Grafica la superficie de respuesta de masa de escoria</span>
+<span class="sd">    requerida para obtener un nivel de azufre en equilibrio</span>
+<span class="sd">    a partir de un contenido de azufre inicial.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_Sini</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+    <span class="n">_Sfin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+
+    <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">_Sini</span><span class="p">,</span> <span class="n">_Sfin</span><span class="p">)</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="n">Msl_surf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Ls</span><span class="p">)</span>
+
+    <span class="n">fig3</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">ax3</span> <span class="o">=</span> <span class="n">fig3</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+    <span class="n">CS3</span> <span class="o">=</span> <span class="n">ax3</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
+    <span class="n">cbar3</span> <span class="o">=</span> <span class="n">fig3</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">CS3</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">)</span>
+    
+    <span class="n">ax3</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;ppm S (inicial)&quot;</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;ppm S (equilibrio)&quot;</span><span class="p">)</span>
+    
+    <span class="n">cbar3</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Masa de escoria $M_</span><span class="si">{sl}</span><span class="s1">$, [kg/ton]&#39;</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>The user is invited to experiment by changing the value of the sulfur partition coefficient in the function <code class="docutils literal notranslate"><span class="pre">plot_Msl_surf()</span></code></strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_Msl_surf</span><span class="p">(</span><span class="n">Ls</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1c786792e7ae532f7ee75e55257c7ad341a5e1fc769d4550fd99262a862f4c24.png" src="../_images/1c786792e7ae532f7ee75e55257c7ad341a5e1fc769d4550fd99262a862f4c24.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="calculation-of-the-desulfurization-rate">
+<h2>Calculation of the desulfurization rate<a class="headerlink" href="#calculation-of-the-desulfurization-rate" title="Permalink to this heading">#</a></h2>
+<p>As was already mentioned, the desulfurization process is driven by sulfur transfer at the metal-slag interface.</p>
+<div class="math notranslate nohighlight">
+\[ \left[ S \right] + \left( O^{2-} \right) = \left( S^{2-} \right) + \left[ O \right] \quad \quad Reac. 2\]</div>
+<p>These kinds of processes can be described by a first order differential equation.</p>
+<section id="differential-equation-for-the-desulfurization-rate">
+<h3>Differential equation for the desulfurization rate<a class="headerlink" href="#differential-equation-for-the-desulfurization-rate" title="Permalink to this heading">#</a></h3>
+<p>The first order differential equation that is shown below, allows to estimate the progress of the desulfurization of a steel bath, considering the fact that as sulfur is removed from the metal, the sulfur content in the slag is rising.</p>
+<div class="math notranslate nohighlight">
+\[\frac{d[\%S]}{dt} = -k_{S,emp} \left([\%S] \left(1 + \frac{1}{\frac{M_{sl}}{1000} L_s} \right) - \frac{[\%S_0]}{\frac{M_{sl}}{1000} L_s}\right) \]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(k_{S, emp}\)</span>: empirical desulfurization constant, characterizing the bath agitation and the extent of the contact area between metal and slag.</p></li>
+<li><p><span class="math notranslate nohighlight">\([\%S]\)</span>: sulfur content in the metal.</p></li>
+<li><p><span class="math notranslate nohighlight">\([\%S_0]\)</span>: initial sulfur content in the metal.</p></li>
+<li><p><span class="math notranslate nohighlight">\(M_{sl}\)</span>: slag amount, in kg/tonne.</p></li>
+<li><p><span class="math notranslate nohighlight">\(L_S\)</span>: sulfur partition ratio.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">desulfRate</span><span class="p">(</span><span class="n">t</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span> <span class="n">wS</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span><span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Desulfurization rate differential equation</span>
+<span class="sd">    taking into account uptake of sulfur by the slag</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    t : Float</span>
+<span class="sd">        time, in [s]</span>
+<span class="sd">    wS: Float</span>
+<span class="sd">        sulfur content, in [wt%]</span>
+<span class="sd">    c:  tupple with Floats</span>
+<span class="sd">        ks: desulfurization rate constant, in [1/s]</span>
+<span class="sd">        ws0: initial sulfur content in metal, in [wt%]</span>
+<span class="sd">        Msl: kg of slag per ton of metal, in [kg/ton]</span>
+<span class="sd">        Ls: sulfur partition coeficient, Ls=(%S)/[%S]</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dwSdt : float</span>
+<span class="sd">        Desulfurization rate, in [[%S]/s]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ks</span><span class="p">,</span> <span class="n">wS0</span><span class="p">,</span> <span class="n">Msl</span><span class="p">,</span> <span class="n">Ls</span> <span class="o">=</span> <span class="n">c</span>
+    <span class="n">Y</span> <span class="o">=</span> <span class="n">Msl</span><span class="o">/</span><span class="mi">1000</span> <span class="o">*</span> <span class="n">Ls</span>
+    <span class="n">dwSdt</span> <span class="o">=</span> <span class="o">-</span><span class="n">ks</span> <span class="o">*</span> <span class="p">(</span><span class="n">wS</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="n">Y</span><span class="p">)</span> <span class="o">-</span> <span class="n">wS0</span><span class="o">/</span><span class="n">Y</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dwSdt</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="solution-of-the-differential-equation-with-a-numerical-method">
+<h3>Solution of the differential equation with a numerical method<a class="headerlink" href="#solution-of-the-differential-equation-with-a-numerical-method" title="Permalink to this heading">#</a></h3>
+<p>Below, a method for the solution of the differential equation written in the function <code class="docutils literal notranslate"><span class="pre">defulfRate()</span></code>, by using the function <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code>, included in the <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code> library, is presented.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">plot_desulfRate()</span></code> function is used for plotting the results from the numerical integration of the differential equation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_desulfRate</span><span class="p">(</span><span class="n">sol</span><span class="p">):</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+    
+    <span class="n">t</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="mi">60</span> <span class="c1"># tiempo,[min]</span>
+    <span class="n">wS</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># azufre al tiempo t, [wt%]</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">wS</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;tiempo de refinación [min]&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Contenido de azufre en el metal [wt%]&quot;</span><span class="p">)</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>The user is invited to experiment in order to evaluate the effect of different parameters.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define integration time and constants</span>
+<span class="n">teval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3600</span><span class="p">,</span> <span class="mi">121</span><span class="p">)</span>
+<span class="n">ks</span> <span class="o">=</span> <span class="mf">1e-3</span> <span class="c1"># desulfurization constant, [1/s]</span>
+<span class="n">wS0</span> <span class="o">=</span> <span class="mf">0.020</span> <span class="c1"># initial sulfur, [wt%]</span>
+<span class="n">Msl</span> <span class="o">=</span> <span class="mi">20</span> <span class="c1"># slag amount, [kg/ton]</span>
+<span class="n">Ls</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1"># sulfur partition ratio</span>
+
+<span class="c1"># Entries for the solver</span>
+<span class="n">tspan</span> <span class="o">=</span> <span class="p">(</span><span class="n">teval</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">teval</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="n">ks</span><span class="p">,</span> <span class="n">wS0</span><span class="p">,</span> <span class="n">Msl</span><span class="p">,</span> <span class="n">Ls</span><span class="p">]</span>
+
+<span class="c1"># Solve the differential equation</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">((</span><span class="k">lambda</span> <span class="n">t</span><span class="p">,</span> <span class="n">wS</span><span class="p">:</span> <span class="n">desulfRate</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">wS</span><span class="p">,</span> <span class="n">c</span><span class="p">)),</span> <span class="n">t_span</span><span class="o">=</span><span class="n">tspan</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="p">[</span><span class="n">wS0</span><span class="p">],</span> <span class="n">t_eval</span><span class="o">=</span><span class="n">teval</span><span class="p">)</span>
+
+<span class="c1"># plot the result</span>
+<span class="n">plot_desulfRate</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/effabb0a58200ee66e4f15cf32c0464c670d5265ee9398955e968970068a158b.png" src="../_images/effabb0a58200ee66e4f15cf32c0464c670d5265ee9398955e968970068a158b.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="further-reading">
+<h2>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://doi.org/10.1098/rspa.1954.0099">Finchan, C. J. &amp; Richardson F. D (1954)</a><br />
+The behaviour of sulphur in silicate and aluminate melts<br />
+Proceedings of the Royal Society London A22340–62</p>
+<p><a class="reference external" href="https://www.stahleisen.de/product/slag-atlas/">Slag Atlas (1995)</a><br />
+ed. by VDEh. Verlag Stahleisen GmbH, Düsseldorf.</p>
+<p><a class="reference external" href="https://imis.aist.org/store/detail.aspx?id=PB-332">The Making, Shaping and Treating of Steel: Steelmaking and Refining Volume (1998)</a><br />
+ed. by R. J. Fruehan, Association of Iron and Steel Engineers.</p>
+<p><a class="reference external" href="https://www.jstage.jst.go.jp/article/isijinternational1989/39/11/39_11_1140/_pdf">Andersson, M.A., Jönsson, P. G., &amp; Nzotta, M. M. (1999)</a><br />
+Application of the sulphide capacity concept on high-basicity ladle slags used in bearing-steel production.<br />
+ISIJ international, 39(11), 1140-1149.</p>
+<p><a class="reference external" href="https://doi.org/10.1201/9781420042313">Secondary Steelmaking: Principles and Applications (2000)</a><br />
+GHOSH, Ahindra.
+CRC Press.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./en"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Deox.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Fundamentals of steel deoxidation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../es/Deox.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Fundamentos de desoxidación de aceros</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metallurgical-context">Metallurgical context</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sulfide-capacity-cs">Sulfide capacity, Cs.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measurements-of-equilibrium-sulfur-content-in-slags">Measurements of equilibrium sulfur content in slags</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sulfide-capacity-definition">Sulfide capacity definition</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modified-sulfide-capacity-cs">Modified sulfide capacity, Cs’.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sulfur-exchange-reaction-between-steel-and-slag">Sulfur exchange reaction between steel and slag</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modified-sulfide-capacity-definition">Modified sulfide capacity definition</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relating-cs-and-cs">Relating Cs and Cs’</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-of-the-oxygen-sulfur-relation-from-a-ratio-of-partial-pressure-to-a-ratio-of-solute-activities">Conversion of the oxygen/sulfur relation, from a ratio of partial pressure to a ratio of solute activities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ratio-between-cs-and-cs">ratio between Cs’ and Cs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sulfur-partition-ratio-ls">Sulfur partition ratio, Ls</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-between-the-sulfur-partition-ratio-and-the-sulfide-capacity">Relation between the sulfur partition ratio and the sulfide capacity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metallurgical-implications">Metallurgical implications</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-slag-amount">Effect of slag amount</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sulfur-balance">Sulfur balance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sulfur-balance-in-terms-of-the-partition-coefficient-and-the-slag-mass">Sulfur balance in terms of the partition coefficient and the slag mass</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Metallurgical implications</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculation-of-the-desulfurization-rate">Calculation of the desulfurization rate</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equation-for-the-desulfurization-rate">Differential equation for the desulfurization rate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-of-the-differential-equation-with-a-numerical-method">Solution of the differential equation with a numerical method</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further reading</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr. Edgar Ivan Castro Cedeño
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,943 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Fundamentos de desoxidación de aceros &#8212; steelDeoxDesulf101</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'es/Deox';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fundamentos de desulfuración de aceros" href="Desulf.html" />
+    <link rel="prev" title="Fundamentals of steel desulfurization" href="../en/Desulf.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="steelDeoxDesulf101 - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="steelDeoxDesulf101 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    steelDeoxDesulf101
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">English</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../en/Deox.html">Fundamentals of steel deoxidation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../en/Desulf.html">Fundamentals of steel desulfurization</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Español</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Fundamentos de desoxidación de aceros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Desulf.html">Fundamentos de desulfuración de aceros</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/es/Deox.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fundamentos de desoxidación de aceros</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contexto-metalurgico">Contexto metalúrgico</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reaccion-general-de-desoxidacion">Reacción general de desoxidación</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estados-de-referencia">Estados de referencia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formalismo-de-wagner-de-coeficientes-de-interaccion">Formalismo de Wagner de coeficientes de interacción</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desoxidacion-con-aluminio">Desoxidación con aluminio</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reaccion-de-desoxidacion">Reacción de desoxidación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valor-numerico-de-la-constante-de-equilibrio">Valor numérico de la constante de equilibrio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valor-numerico-de-los-coeficientes-de-interaccion">Valor numérico de los coeficientes de interacción</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#coeficientes-de-primer-orden">Coeficientes de primer orden</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#coeficientes-de-segundo-orden">Coeficientes de segundo orden</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion-de-curvas-de-equilibrio-para-la-desoxidacion-con-aluminio">Construcción de curvas de equilibrio para la desoxidación con aluminio</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-numerico">Método numérico</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-experimentales">Datos experimentales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-curvas-de-equilibrio-y-datos-experimentales">Comparación de curvas de equilibrio y datos experimentales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referencias</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="fundamentos-de-desoxidacion-de-aceros">
+<h1>Fundamentos de desoxidación de aceros<a class="headerlink" href="#fundamentos-de-desoxidacion-de-aceros" title="Permalink to this heading">#</a></h1>
+<p><strong>Dr. Edgar Ivan Castro Cedeño</strong></p>
+<p><a class="reference external" href="mailto:edgar&#46;castro&#37;&#52;&#48;cinvestav&#46;mx">edgar<span>&#46;</span>castro<span>&#64;</span>cinvestav<span>&#46;</span>mx</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="contexto-metalurgico">
+<h2>Contexto metalúrgico<a class="headerlink" href="#contexto-metalurgico" title="Permalink to this heading">#</a></h2>
+<p>Al terminar el proceso de refinación primaria del acero (BOF/EAF), se tiene un acero que contiene grandes cantidades de oxígeno disuelto en el baño. El orden de magnitud es:</p>
+<div class="math notranslate nohighlight">
+\[a_O &gt; 300 \, ppm\]</div>
+<p>Una de las étapas en la refinación secundaria del acero es la desoxidación del baño, que se puede realizar mediante la adición de un agente desoxidante o mediante un tratamiento de vacío.</p>
+<p>Este documento se enfoca en presentar conceptos básicos de desoxidación mediante la adición de agentes desoxidantes, y la aplicación de los mismos en el proceso de refinación secundaria de aceros.</p>
+</section>
+<section id="reaccion-general-de-desoxidacion">
+<h2>Reacción general de desoxidación<a class="headerlink" href="#reaccion-general-de-desoxidacion" title="Permalink to this heading">#</a></h2>
+<p>De forma general, la reacción de desoxidación de un acero se puede expresar como:</p>
+<div class="math notranslate nohighlight">
+\[\left(M_xO_y\right) = x\left[M\right] + y\left[O_x\right] \]</div>
+<div class="math notranslate nohighlight">
+\[K = \frac{a_M^x a_O^y}{a_{M_xO_y}} \]</div>
+<p>donde <span class="math notranslate nohighlight">\(a_{M_xO_y}\)</span>, <span class="math notranslate nohighlight">\(a_M^x\)</span>, y <span class="math notranslate nohighlight">\(a_O^y\)</span>, son las actividades termodinámicas de las especies químicas de interés.</p>
+<section id="estados-de-referencia">
+<h3>Estados de referencia<a class="headerlink" href="#estados-de-referencia" title="Permalink to this heading">#</a></h3>
+<p>Para los <strong>productos de desoxidación</strong> se utiliza la substancia pura como estado de referencia:</p>
+<div class="math notranslate nohighlight">
+\[a_{M_xO_y} = \gamma_{M_xO_y} {X_{M_xO_y}} \]</div>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Símbolo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(a_{M_xO_y}\)</span></p></td>
+<td><p>Actividad del producto de desoxidación <span class="math notranslate nohighlight">\(M_xO_y\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\gamma_{M_xO_y}\)</span></p></td>
+<td><p>Coeficiente de actividad Raoultiano</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(X_{M_xO_y}\)</span></p></td>
+<td><p>Contenido de <span class="math notranslate nohighlight">\(M_xO_y\)</span> en el producto de desoxidación, en fracción molar.</p></td>
+</tr>
+</tbody>
+</table>
+<p>En este documento no se habla de métodos para estimar la actividad de los productos de desoxidación en sistemas complejos.</p>
+<p>Para los <strong>solutos en el baño de metal fundido</strong> se utiliza la solución Henriana con dilución al 1% en masa como estado de referencia:</p>
+<div class="math notranslate nohighlight">
+\[h_M = f_M {\left[\%M\right]} \]</div>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Símbolo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(h_M\)</span></p></td>
+<td><p>actividad del soluto <span class="math notranslate nohighlight">\(M\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(f_M\)</span></p></td>
+<td><p>Coeficiente de actividad henriana</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\left[ \%M \right]\)</span></p></td>
+<td><p>Contenido del soluto <span class="math notranslate nohighlight">\(M\)</span> en el baño, in porcentaje másico.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="formalismo-de-wagner-de-coeficientes-de-interaccion">
+<h3>Formalismo de Wagner de coeficientes de interacción<a class="headerlink" href="#formalismo-de-wagner-de-coeficientes-de-interaccion" title="Permalink to this heading">#</a></h3>
+<p>Para considerar la dependencia entre la composición del baño y los coeficientes de actividad de los solutos, se va a utilizar el formalismo de Wagner.</p>
+<div class="math notranslate nohighlight">
+\[\log f_i = \sum\limits_{j=2}^{n}{e_i^j \left[\%j\right]} 
+        + \sum\limits_{j=2}^n{r_i^j \left[ \%j\right]^2} 
+        + \sum\limits_{j=2}^{n-1} \sum\limits_{k&gt;j}^{n} {r_i^{j,k} \left[\%j\right]\left[\%k\right]}\]</div>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Símbolo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(e_i^j\)</span></p></td>
+<td><p>Coeficiente de interacción de primer orden para el soluto <span class="math notranslate nohighlight">\(i\)</span> en presencia del soluto <span class="math notranslate nohighlight">\(j\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(r_i^j\)</span></p></td>
+<td><p>Coeficiente de interacción de segundo orden para el soluto <span class="math notranslate nohighlight">\(i\)</span> en presencia del soluto <span class="math notranslate nohighlight">\(j\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(r_i^{j,k}\)</span></p></td>
+<td><p>Coeficiente de interacción de segundo orden para el soluto <span class="math notranslate nohighlight">\(i\)</span> en presencia de los soluto <span class="math notranslate nohighlight">\(j\)</span>, <span class="math notranslate nohighlight">\(k\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Aunque este formalismo fue definido originalmente para soluciones en dilución infinita, ha probado su utilidad práctica para el tratamiento termodinámico de soluciones con una concentración baja de solutos, como el hierro y el acero. Los parámetros de interacción de orden superior se utilizan para tratar casos como los aceros aleados, en los que la concentración de solutos es más alta.</p>
+</section>
+</section>
+<section id="desoxidacion-con-aluminio">
+<h2>Desoxidación con aluminio<a class="headerlink" href="#desoxidacion-con-aluminio" title="Permalink to this heading">#</a></h2>
+<p><img alt="Alumina inclusion" src="../_images/alumina1.png" /></p>
+<p><img alt="Alumina inclusion" src="../_images/alumina3.png" /></p>
+<section id="reaccion-de-desoxidacion">
+<h3>Reacción de desoxidación<a class="headerlink" href="#reaccion-de-desoxidacion" title="Permalink to this heading">#</a></h3>
+<p>La reacción de deoxidación con alumino está dada por:</p>
+<div class="math notranslate nohighlight">
+\[\left( Al_{2}O_{3}\right) = 2 \left[Al\right] + 3 \left[O\right] \]</div>
+<div class="math notranslate nohighlight">
+\[K_{Al} =  \frac{h_{Al}^2  h_{O}^3}{a_{Al_2O_3}} \]</div>
+<p>Donde la actividad de aluminio está dada por:</p>
+<p><span class="math notranslate nohighlight">\(h_{Al} = f_{Al} [\%Al]\)</span></p>
+<p><span class="math notranslate nohighlight">\(\log f_{Al} = e_{Al}^{Al} \left[\%Al\right] + e_{Al}^{O} \left[\%O\right] + r_{Al}^{Al,Al} \left[\%Al\right]^2 + r_{Al}^{O,O} \left[\%O\right]^2 + r_{Al}^{Al,O} \left[\%Al\right]\left[\%O\right] \)</span></p>
+<p>Y la actividad de oxígeno está dada por:</p>
+<p><span class="math notranslate nohighlight">\(h_O = f_{O} [\%O]\)</span></p>
+<p><span class="math notranslate nohighlight">\(\log f_{O} = e_{O}^{Al} \left[\%Al\right] + e_{O}^{O} \left[\%O\right] + r_{O}^{Al,Al} \left[\%Al\right]^2 + r_{O}^{O,O} \left[\%O\right]^2 + r_{O}^{Al,O} \left[\%Al\right]\left[\%O\right] \)</span></p>
+</section>
+<section id="valor-numerico-de-la-constante-de-equilibrio">
+<h3>Valor numérico de la constante de equilibrio<a class="headerlink" href="#valor-numerico-de-la-constante-de-equilibrio" title="Permalink to this heading">#</a></h3>
+<p>El valor recomendado para la constante de equilibrio está dado por:</p>
+<div class="math notranslate nohighlight">
+\[\log K_{Al} = -\frac{45300}{T} + 11.62 \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">logK_Al</span><span class="p">(</span><span class="n">T</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    logarithm of equilibrium constant: Al-O</span>
+<span class="sd">   </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    T : Float</span>
+<span class="sd">        Temperature, in [K]</span>
+<span class="sd">       </span>
+<span class="sd">    Returns</span>
+<span class="sd">        logarithm of equilibrium constant</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">45300</span> <span class="o">/</span> <span class="n">T</span> <span class="o">+</span> <span class="mf">11.62</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="valor-numerico-de-los-coeficientes-de-interaccion">
+<h3>Valor numérico de los coeficientes de interacción<a class="headerlink" href="#valor-numerico-de-los-coeficientes-de-interaccion" title="Permalink to this heading">#</a></h3>
+<section id="coeficientes-de-primer-orden">
+<h4>Coeficientes de primer orden<a class="headerlink" href="#coeficientes-de-primer-orden" title="Permalink to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}e_{Al}^{Al} &amp; e_{Al}^{O} \\ e_{O}^{Al} &amp; e_{O}^{O}\end{bmatrix} = \begin{bmatrix}\frac{80.5}{T} &amp; 3.21 - \frac{9720}{T} \\ 1.90 - \frac{5750}{T} &amp; 0.76 - \frac{1750}{T}\end{bmatrix}\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">e_AlAl</span><span class="p">(</span><span class="n">T</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mf">80.5</span> <span class="o">/</span> <span class="n">T</span>
+
+<span class="k">def</span> <span class="nf">e_AlO</span><span class="p">(</span><span class="n">T</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mf">3.21</span> <span class="o">-</span> <span class="mi">9720</span> <span class="o">/</span> <span class="n">T</span>
+
+<span class="k">def</span> <span class="nf">e_OAl</span><span class="p">(</span><span class="n">T</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mf">1.90</span> <span class="o">-</span> <span class="mi">5750</span> <span class="o">/</span> <span class="n">T</span>
+
+<span class="k">def</span> <span class="nf">e_OO</span><span class="p">(</span><span class="n">T</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mf">0.76</span> <span class="o">-</span> <span class="mi">1750</span><span class="o">/</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="coeficientes-de-segundo-orden">
+<h4>Coeficientes de segundo orden<a class="headerlink" href="#coeficientes-de-segundo-orden" title="Permalink to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}r_{Al}^{Al, Al} &amp; r_{Al}^{O,O} \\ r_{O}^{Al, Al} &amp; r_{O}^{O,O}\end{bmatrix} = \begin{bmatrix}0 &amp;  -107 - \frac{2.75\times10^{5}}{T} \\ 0.0033 - \frac{25.0}{T} &amp; 0\end{bmatrix}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix} r_{Al}^{Al, O} \\ r_{O}^{Al, O}\end{bmatrix} = \begin{bmatrix} -0.021 - \frac{13.78}{T} \\ 127.3 + \frac{3.273\times10^{5}}{T} \end{bmatrix}\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">r_AlAl</span><span class="p">(</span><span class="n">T</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">r_AlO</span><span class="p">(</span><span class="n">T</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">107</span> <span class="o">-</span> <span class="mf">2.75e5</span> <span class="o">/</span> <span class="n">T</span>
+
+<span class="k">def</span> <span class="nf">r_OAl</span><span class="p">(</span><span class="n">T</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mf">0.0033</span> <span class="o">-</span> <span class="mi">25</span> <span class="o">/</span> <span class="n">T</span>
+
+<span class="k">def</span> <span class="nf">r_OO</span><span class="p">(</span><span class="n">T</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">r_AlAlO</span><span class="p">(</span><span class="n">T</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mf">0.021</span> <span class="o">-</span><span class="mf">13.78</span> <span class="o">/</span> <span class="n">T</span>
+
+<span class="k">def</span> <span class="nf">r_OAlO</span><span class="p">(</span><span class="n">T</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mf">127.3</span> <span class="o">+</span> <span class="mf">3.273e5</span> <span class="o">/</span> <span class="n">T</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="construccion-de-curvas-de-equilibrio-para-la-desoxidacion-con-aluminio">
+<h2>Construcción de curvas de equilibrio para la desoxidación con aluminio<a class="headerlink" href="#construccion-de-curvas-de-equilibrio-para-la-desoxidacion-con-aluminio" title="Permalink to this heading">#</a></h2>
+<section id="metodo-numerico">
+<h3>Método numérico<a class="headerlink" href="#metodo-numerico" title="Permalink to this heading">#</a></h3>
+<p>Aplicando leyes de logaritmos, la constante de equilibrio para la reacción de deoxidación con aluminio se puede escribir como:</p>
+<div class="math notranslate nohighlight">
+\[\log K_{Al} = 2 \log f_{Al} + 2 \log \left[\%Al\right] + 3 \log f_{O} + 3 \log \left[\%O \right] - \log a_{Al_2O_3} \]</div>
+<p>En la función <code class="docutils literal notranslate"><span class="pre">Al_O_eqs()</span></code> se reescribe la ecuación mostrada arriba, de tal forma que al calcular la raíz de la ecuación <span class="math notranslate nohighlight">\((\varepsilon = 0)\)</span> mediante un método numérico, se puedan determinar las combinaciones de contenido de aluminio y oxígeno disueltos que satisfacen la condición de equilibrio termodinámico.</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon = 2 \log f_{Al} + 2 \log \left[\%Al\right] + 3 \log f_{O} + 3 \log \left[\%O \right] - \log a_{Al_2O_3} - \log K_{Al}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Al_O_eqs</span><span class="p">(</span><span class="n">pctO</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">)</span> <span class="o">-&gt;</span><span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    remainder of Thermodynamic equilibrium equation: Al-O</span>
+<span class="sd">    Activity coefficients calculated with none, only first order, or</span>
+<span class="sd">    first and second order interaction coefficients</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    pctO : Float</span>
+<span class="sd">        weight percent oxygen.</span>
+<span class="sd">    *params : List or tupples</span>
+<span class="sd">        pctAl: weight percent aluminum (float)    </span>
+<span class="sd">        T: Temperature in K (float)</span>
+<span class="sd">        aAl2O3: thermodynamic activity of Al2O3 (float)</span>
+<span class="sd">        order: 0: no interacion params., 1: e_ij, 2: e_ij, r_ij, r_ijk (integer)</span>
+<span class="sd">        </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    eps : float</span>
+<span class="sd">        LHS residual of the equation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">pctAl</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">aAl2O3</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="n">params</span> <span class="c1"># unpacking of parameters</span>
+
+    <span class="n">log_K</span> <span class="o">=</span> <span class="n">logK_Al</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">log_aAl2O3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">aAl2O3</span><span class="p">)</span>
+        
+    <span class="k">if</span> <span class="n">order</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">log_fAl</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">log_fO</span>  <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">order</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">order</span> <span class="o">==</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">log_fAl</span> <span class="o">=</span> <span class="n">e_AlAl</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">pctAl</span> <span class="o">+</span> <span class="n">e_AlO</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">pctO</span>
+        <span class="n">log_fO</span>  <span class="o">=</span> <span class="n">e_OAl</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">pctAl</span> <span class="o">+</span> <span class="n">e_OO</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">pctO</span>
+        <span class="k">if</span> <span class="n">order</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">log_fAl</span> <span class="o">+=</span> <span class="n">r_AlAl</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">pctAl</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">r_AlO</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">pctO</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">r_AlAlO</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">pctAl</span><span class="o">*</span><span class="n">pctO</span>
+            <span class="n">log_fO</span>  <span class="o">+=</span> <span class="n">r_OAl</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">pctAl</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">r_OO</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">pctO</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">r_OAlO</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">pctAl</span><span class="o">*</span><span class="n">pctO</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">valid</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;order: </span><span class="si">{</span><span class="n">order</span><span class="si">}</span><span class="s2"> is not a valid integer, choose either </span><span class="si">{</span><span class="n">valid</span><span class="w"> </span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+    <span class="n">eps</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">log_fAl</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">pctAl</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">log_fO</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">pctO</span><span class="p">)</span> <span class="o">-</span> <span class="n">log_aAl2O3</span> <span class="o">-</span> <span class="n">log_K</span>
+    
+    <span class="k">return</span> <span class="n">eps</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>La funciones <code class="docutils literal notranslate"><span class="pre">calc_pure()</span></code> y <code class="docutils literal notranslate"><span class="pre">data_deox()</span></code> son <strong>wrappers</strong> para poder utilizar la función <code class="docutils literal notranslate"><span class="pre">fsolve()</span></code> de la librería <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code>, que permite encontrar la raíz de la ecuación que representa las condiciones de equilibrio.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calc_pure</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">pctMe</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">aInc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">(</span><span class="n">pctMe</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">aInc</span><span class="p">,</span> <span class="n">order</span><span class="p">)</span>
+    <span class="n">valid</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">valid</span><span class="p">:</span>
+        <span class="n">wO</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">wO</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">order</span><span class="si">}</span><span class="s2"> is not a valid integer, use either: </span><span class="si">{</span><span class="n">valid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">data_deox</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">pcts_M</span><span class="p">,</span> <span class="n">a_MxOy</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">bound</span><span class="p">):</span>
+    <span class="n">pcts_O</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1">### calculate oxygen in equilibrium with thermo function</span>
+    <span class="k">for</span> <span class="n">pct_M</span> <span class="ow">in</span> <span class="n">pcts_M</span><span class="p">:</span>
+        <span class="n">wO</span> <span class="o">=</span> <span class="n">calc_pure</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">pct_M</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">a_MxOy</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">order</span><span class="p">)</span>
+        <span class="n">pcts_O</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">wO</span><span class="p">))</span>
+    <span class="n">pcts_O</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pcts_O</span><span class="p">)</span>
+    <span class="c1">### Bound the [%O] in the resulting curves</span>
+    <span class="n">pcts_O</span><span class="p">[</span><span class="n">pcts_O</span> <span class="o">&gt;</span> <span class="n">bound</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span>
+    
+    <span class="k">return</span> <span class="n">pcts_M</span><span class="p">,</span> <span class="n">pcts_O</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="datos-experimentales">
+<h3>Datos experimentales<a class="headerlink" href="#datos-experimentales" title="Permalink to this heading">#</a></h3>
+<p>En toda aplicación, siempre es buena práctica comparar los resultados de cualquier modelo con mediciones experimentales.</p>
+<p>Debajo se utilizan fuciones delibrería la librería <code class="docutils literal notranslate"><span class="pre">pandas</span></code> para leer un archivo que contiene datos experimentales de equilibrio aluminio-oxígeno en baños de acero tomados de 12 fuentes diferentes en la literatura.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Experimental data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/AlO.tsv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">round</span><span class="p">({</span><span class="s1">&#39;pctAl&#39;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;pctO&#39;</span><span class="p">:</span><span class="mi">4</span><span class="p">})</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Source</th>
+      <th>pctAl</th>
+      <th>pctO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Fruehan70</td>
+      <td>1.3937</td>
+      <td>0.0046</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Fruehan70</td>
+      <td>0.8529</td>
+      <td>0.0030</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Fruehan70</td>
+      <td>0.3523</td>
+      <td>0.0014</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Fruehan70</td>
+      <td>0.0688</td>
+      <td>0.0008</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Fruehan70</td>
+      <td>0.0585</td>
+      <td>0.0007</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="comparacion-de-curvas-de-equilibrio-y-datos-experimentales">
+<h3>Comparación de curvas de equilibrio y datos experimentales<a class="headerlink" href="#comparacion-de-curvas-de-equilibrio-y-datos-experimentales" title="Permalink to this heading">#</a></h3>
+<p>Debajo se comparan las curvas de equilibrio aluminio-oxígeno producidas con el modelo termodinámico contra los datos de 12 fuentes distintas en la literatura.</p>
+<p>Se grafican los resultados del modelo con tres grados distintos de refinamiento:</p>
+<ul class="simple">
+<li><p><strong>Orden 0:</strong> Se desprecia el efecto de interacciones entre solutos, corresponde a <span class="math notranslate nohighlight">\(f_{Al} = f_{O} = 1\)</span>.</p></li>
+<li><p><strong>Orden 1:</strong> Se consideran únicamente las interacciones de primer orden, esto es, sólo se utilizan los parámetros de interacción de primer orden, <span class="math notranslate nohighlight">\(e_i^j\)</span>.</p></li>
+<li><p><strong>Orden 2:</strong> Se consideran las interacciones de primer y segundo orden, esto es, se utilizan los parámetros de interacción de primer y segundo orden, <span class="math notranslate nohighlight">\(e_i^j\)</span>, <span class="math notranslate nohighlight">\(r_i^j\)</span>, <span class="math notranslate nohighlight">\(r_i^{j,k}\)</span>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot using pandas and matplotlib:</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">1873</span>                            <span class="c1"># Temperature, K</span>
+<span class="n">pcts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>      <span class="c1"># Al content range, [%Al]</span>
+<span class="n">aAl2O3</span> <span class="o">=</span> <span class="mi">1</span>                          <span class="c1"># Al2O3 activity</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+<span class="c1"># Plot experimental data</span>
+<span class="n">refs</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Source&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">ref</span> <span class="ow">in</span> <span class="n">refs</span><span class="p">:</span>
+    <span class="n">_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Source&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">ref</span><span class="p">)]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">_df</span><span class="p">[</span><span class="s1">&#39;pctAl&#39;</span><span class="p">],</span> <span class="n">_df</span><span class="p">[</span><span class="s1">&#39;pctO&#39;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">ref</span><span class="p">)</span>
+        
+<span class="c1"># Plot model results</span>
+<span class="n">orders</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">linestyles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;0th order&#39;</span><span class="p">,</span> <span class="s1">&#39;1st order&#39;</span><span class="p">,</span> <span class="s1">&#39;2nd order&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">order</span><span class="p">,</span> <span class="n">linestyle</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">orders</span><span class="p">,</span> <span class="n">linestyles</span><span class="p">,</span> <span class="n">labels</span><span class="p">):</span>
+    <span class="n">pctM</span><span class="p">,</span> <span class="n">pctO</span> <span class="o">=</span> <span class="n">data_deox</span><span class="p">(</span><span class="n">Al_O_eqs</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">pcts</span><span class="p">,</span> <span class="n">aAl2O3</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pctM</span><span class="p">,</span> <span class="n">pctO</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="n">linestyle</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+    
+<span class="c1"># Make the plot pretty</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;[%Al]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;[%O]&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/8c81c5ad32a3f027378d2e7c0f6ff1fc107fce9ce22a18b3bdcd23448cb1f395.png" src="../_images/8c81c5ad32a3f027378d2e7c0f6ff1fc107fce9ce22a18b3bdcd23448cb1f395.png" />
+</div>
+</div>
+</section>
+<section id="referencias">
+<h3>Referencias<a class="headerlink" href="#referencias" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://www.researchgate.net/publication/233686082_The_Thermodynamics_of_Liquid_Dilute_Iron_Alloys">Sigworth, G. K., &amp; Elliott, J. F. (1974)</a><br />
+The thermodynamics of liquid dilute iron alloys.<br />
+Metal science, 8(1), 298-310.</p>
+<p><a class="reference external" href="https://www.jstage.jst.go.jp/article/isijinternational1966/28/3/28_3_153/_pdf">Ichise, E. &amp; Moro-Oka, A. (1988)</a><br />
+Interaction Parameter in Liquid Iron Alloys.<br />
+Transactions of the Iron and Steel Institute of Japan, 28(3), 153-163.</p>
+<p><a class="reference external" href="https://link.springer.com/article/10.1007%2Fs11663-015-0361-7">Zhang, L. et al. (2015)</a><br />
+Stability diagram of Mg-Al-O system inclusions in molten steel.<br />
+Metallurgical and Materials Transactions B, 46(4), 1809-1825.</p>
+<p><a class="reference external" href="https://link.springer.com/article/10.1007%2Fs11663-016-0640-y">Castro-Cedeño, E. I. et al. (2016)</a><br />
+Evaluation of steel cleanliness in a steel deoxidized using Al.<br />
+Metallurgical and Materials Transactions B, 47(3), 1613-1625.</p>
+<p><a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S2238785421001873">Wang, H. et al (2021)</a><br />
+Three-dimensional stability diagram of Al–Mg–O inclusions in molten steel.<br />
+Journal of Materials Research and Technology, 12, 43-52.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./es"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../en/Desulf.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Fundamentals of steel desulfurization</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Desulf.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Fundamentos de desulfuración de aceros</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contexto-metalurgico">Contexto metalúrgico</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reaccion-general-de-desoxidacion">Reacción general de desoxidación</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estados-de-referencia">Estados de referencia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formalismo-de-wagner-de-coeficientes-de-interaccion">Formalismo de Wagner de coeficientes de interacción</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desoxidacion-con-aluminio">Desoxidación con aluminio</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reaccion-de-desoxidacion">Reacción de desoxidación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valor-numerico-de-la-constante-de-equilibrio">Valor numérico de la constante de equilibrio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valor-numerico-de-los-coeficientes-de-interaccion">Valor numérico de los coeficientes de interacción</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#coeficientes-de-primer-orden">Coeficientes de primer orden</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#coeficientes-de-segundo-orden">Coeficientes de segundo orden</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion-de-curvas-de-equilibrio-para-la-desoxidacion-con-aluminio">Construcción de curvas de equilibrio para la desoxidación con aluminio</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-numerico">Método numérico</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-experimentales">Datos experimentales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-curvas-de-equilibrio-y-datos-experimentales">Comparación de curvas de equilibrio y datos experimentales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referencias</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr. Edgar Ivan Castro Cedeño
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
