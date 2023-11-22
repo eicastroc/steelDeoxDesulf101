@@ -90,7 +90,7 @@ The sulfur exchange between steel and slag is driven by a ionic reaction at the 
 
 $$ \left[ S \right] + \left( O^{2-} \right) = \left( S^{2-} \right) + \left[ O \right] \quad \quad Reac. 2$$ 
 
-$$ K_2 = \underbrace{\frac{ \left( a_{S^{2-}}\right) }{ \left( a_{O^{2-}}\right)  }}_{no \, medible} \,\, \underbrace{\frac{\left[h_O\right] }{\left[h_S\right]}}_{medible}$$
+$$ K_2 = \underbrace{\frac{ \left( a_{S^{2-}}\right) }{ \left( a_{O^{2-}}\right)  }}_{non-measurable} \,\, \underbrace{\frac{\left[h_O\right] }{\left[h_S\right]}}_{measurable}$$
 
 +++
 
@@ -101,7 +101,7 @@ $$ K_2 = \underbrace{\frac{ \left( a_{S^{2-}}\right) }{ \left( a_{O^{2-}}\right)
 
 The modified sulfide capacity definition is obtained after algebraic manipulation of the equilibrium constant for Reaction 2.
 
-$$ C_S' = \underbrace{K_2 \frac{a_{O^{2-}}}{f_{S^{2-}}}}_{no \, medible} = \underbrace{\left(\%S\right) \frac{\left[h_O\right]}{\left[h_S\right]}}_{medible} $$
+$$ C_S' = \underbrace{K_2 \frac{a_{O^{2-}}}{f_{S^{2-}}}}_{non-measurable} = \underbrace{\left(\%S\right) \frac{\left[h_O\right]}{\left[h_S\right]}}_{measurable} $$
 
 The activity of the sulfide ion in the slag is given by: $a_{S^{2-}} = f_{S^{2-}} \left(\%S\right)_{slag}$. 
 
