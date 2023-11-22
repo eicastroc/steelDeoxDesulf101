@@ -485,7 +485,7 @@ document.write(`
 <span class="n">ratioISIJ0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">logK3</span><span class="p">(</span><span class="n">Tk0</span><span class="p">))</span>
 <span class="n">ax0</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Tc0</span><span class="p">,</span> <span class="n">ratioISIJ0</span><span class="p">)</span>
 
-<span class="n">ax0</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Temperatura [°C]&quot;</span><span class="p">)</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Temperature [°C]&quot;</span><span class="p">)</span>
 <span class="n">ax0</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$C_S&#39; \, / C_S$&quot;</span><span class="p">)</span>
 
 <span class="n">ax0</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">)</span>
@@ -495,7 +495,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/674becf06a2d54d9a03a7cfdab4fb781d9b9b9147ddb8f1eda5b2db0dd675aeb.png" src="../_images/674becf06a2d54d9a03a7cfdab4fb781d9b9b9147ddb8f1eda5b2db0dd675aeb.png" />
+<img alt="../_images/e4dd11eec2faaddcb72c4f3f87d881e85f513d96d7a370ab442ed95f8738990c.png" src="../_images/e4dd11eec2faaddcb72c4f3f87d881e85f513d96d7a370ab442ed95f8738990c.png" />
 </div>
 </div>
 </section>
@@ -507,7 +507,7 @@ document.write(`
 \[L_S = \frac{(\%S)}{[\%S]} \quad \quad Equilibrio\]</div>
 <p>Since measurements of sulfur content in the metal and the slag are relatively easy to perform in the steelshop, it is a commonly used KPI for the steelmaking process. Nevertheless, the metallurgist should remember that steelmaking is a highly transient process, and more often than not the process conditions are out of equilibrium at the time at which sampling is performed.</p>
 <div class="math notranslate nohighlight">
-\[L_{S_{(planta)}} = \frac{(\%S)}{[\%S]} \quad \quad Fuera \, del \, equilibrio\]</div>
+\[L_{S_{(plant)}} = \frac{(\%S)}{[\%S]} \quad \quad Out \, of \, equilibrium\]</div>
 <section id="relation-between-the-sulfur-partition-ratio-and-the-sulfide-capacity">
 <h3>Relation between the sulfur partition ratio and the sulfide capacity<a class="headerlink" href="#relation-between-the-sulfur-partition-ratio-and-the-sulfide-capacity" title="Permalink to this heading">#</a></h3>
 <p>Starting from the definition of the modified sulfide capacity, and the sulfur activity in the metal, given by <span class="math notranslate nohighlight">\(h_S = f_S [\%S]\)</span>, one has:</p>
@@ -578,8 +578,8 @@ document.write(`
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1e4</span><span class="p">)</span>
 
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Actividad Henriana de oxígeno, $h_O$  [wt%]&quot;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Coeficiente de reparto de azufre, $L_S$&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Henrian activity for oxygen, $h_O$  [wt%]&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Sulfur partition ratio, $L_S$&quot;</span><span class="p">)</span>
 
 
 <span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">)</span>
@@ -590,7 +590,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c7ad9228741c3c8f92beb69ebb93a651d395f9f07386edbc159ac54499c9175d.png" src="../_images/c7ad9228741c3c8f92beb69ebb93a651d395f9f07386edbc159ac54499c9175d.png" />
+<img alt="../_images/63c5361d5c002f433c5f023ad69cb0b3edb0f5515ac659331f632d7807b74991.png" src="../_images/63c5361d5c002f433c5f023ad69cb0b3edb0f5515ac659331f632d7807b74991.png" />
 </div>
 </div>
 </section>
@@ -668,9 +668,9 @@ document.write(`
 <span class="c1"># Format graph</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1e4</span><span class="p">)</span>
 
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Masa específica de escoria fundida, [kg/ton]&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Specific slag mass, [kg/ton]&quot;</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Porcentaje de desulfuración al alcanzar el equilibrio&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Percentage desulfurization at equilibrium&quot;</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 
 <span class="n">ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">)</span>
@@ -681,7 +681,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1443f962a37c6e1b1d5e4dea56785e034143b4c8ba5c00d8ce5ac884461b252b.png" src="../_images/1443f962a37c6e1b1d5e4dea56785e034143b4c8ba5c00d8ce5ac884461b252b.png" />
+<img alt="../_images/e60d24379ef9eb5f5c9a7937c26079b2c3e09f7d5f6e26c82b3bfb5585f5e624.png" src="../_images/e60d24379ef9eb5f5c9a7937c26079b2c3e09f7d5f6e26c82b3bfb5585f5e624.png" />
 </div>
 </div>
 <p>Starting form the equation of the ratio of sulfur contents, reponse surfaces for the amount of required slag, <span class="math notranslate nohighlight">\(M_{sl}\)</span>, for obtaining a given equilibrium sulfur amount <span class="math notranslate nohighlight">\([\omega_S]\)</span>, starting from given initial sulfur content, <span class="math notranslate nohighlight">\([\omega_S]_0\)</span>, and sulfur partition ratio, <span class="math notranslate nohighlight">\(L_S\)</span>.</p>
@@ -715,8 +715,8 @@ document.write(`
     <span class="n">CS3</span> <span class="o">=</span> <span class="n">ax3</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
     <span class="n">cbar3</span> <span class="o">=</span> <span class="n">fig3</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">CS3</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">)</span>
     
-    <span class="n">ax3</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;ppm S (inicial)&quot;</span><span class="p">)</span>
-    <span class="n">ax3</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;ppm S (equilibrio)&quot;</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;ppm S (initial)&quot;</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;ppm S (equilibrium)&quot;</span><span class="p">)</span>
     
     <span class="n">cbar3</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Masa de escoria $M_</span><span class="si">{sl}</span><span class="s1">$, [kg/ton]&#39;</span><span class="p">)</span>
     
@@ -733,7 +733,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1c786792e7ae532f7ee75e55257c7ad341a5e1fc769d4550fd99262a862f4c24.png" src="../_images/1c786792e7ae532f7ee75e55257c7ad341a5e1fc769d4550fd99262a862f4c24.png" />
+<img alt="../_images/4e06ae85a9972e818e2a495aea9bfb4dc10670507dd450cd949902883f8cf039.png" src="../_images/4e06ae85a9972e818e2a495aea9bfb4dc10670507dd450cd949902883f8cf039.png" />
 </div>
 </div>
 </section>
@@ -803,8 +803,8 @@ document.write(`
     <span class="n">wS</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># azufre al tiempo t, [wt%]</span>
     
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">wS</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;tiempo de refinación [min]&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Contenido de azufre en el metal [wt%]&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Process time [min]&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Sulfur content in the metal [wt%]&quot;</span><span class="p">)</span>
     
     <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">)</span>
 </pre></div>
@@ -834,7 +834,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/effabb0a58200ee66e4f15cf32c0464c670d5265ee9398955e968970068a158b.png" src="../_images/effabb0a58200ee66e4f15cf32c0464c670d5265ee9398955e968970068a158b.png" />
+<img alt="../_images/00e6660f2b3381b330db4a476d7bb60228957829c0b90bd462947aa1acadeb75.png" src="../_images/00e6660f2b3381b330db4a476d7bb60228957829c0b90bd462947aa1acadeb75.png" />
 </div>
 </div>
 </section>

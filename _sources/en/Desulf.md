@@ -184,7 +184,7 @@ Tk0 = Tc0 + 273.15
 ratioISIJ0 = np.power(10, logK3(Tk0))
 ax0.plot(Tc0, ratioISIJ0)
 
-ax0.set_xlabel("Temperatura [°C]")
+ax0.set_xlabel("Temperature [°C]")
 ax0.set_ylabel(r"$C_S' \, / C_S$")
 
 ax0.grid(ls='--', color='lightgray')
@@ -204,7 +204,7 @@ $$L_S = \frac{(\%S)}{[\%S]} \quad \quad Equilibrio$$
 Since measurements of sulfur content in the metal and the slag are relatively easy to perform in the steelshop, it is a commonly used KPI for the steelmaking process. Nevertheless, the metallurgist should remember that steelmaking is a highly transient process, and more often than not the process conditions are out of equilibrium at the time at which sampling is performed.
 
 
-$$L_{S_{(planta)}} = \frac{(\%S)}{[\%S]} \quad \quad Fuera \, del \, equilibrio$$
+$$L_{S_{(plant)}} = \frac{(\%S)}{[\%S]} \quad \quad Out \, of \, equilibrium$$
 
 +++
 
@@ -291,8 +291,8 @@ ax1.set_xscale('log')
 ax1.set_yscale('log')
 ax1.set_ylim(1, 1e4)
 
-ax1.set_xlabel(r"Actividad Henriana de oxígeno, $h_O$  [wt%]")
-ax1.set_ylabel(r"Coeficiente de reparto de azufre, $L_S$")
+ax1.set_xlabel(r"Henrian activity for oxygen, $h_O$  [wt%]")
+ax1.set_ylabel(r"Sulfur partition ratio, $L_S$")
 
 
 ax1.grid(ls='--', which='both', color='lightgray')
@@ -395,9 +395,9 @@ for Ls in _Ls2:
 # Format graph
 ax2.set_ylim(1, 1e4)
 
-ax2.set_xlabel(r"Masa específica de escoria fundida, [kg/ton]")
+ax2.set_xlabel(r"Specific slag mass, [kg/ton]")
 ax2.set_xlim(0, 30)
-ax2.set_ylabel(r"Porcentaje de desulfuración al alcanzar el equilibrio")
+ax2.set_ylabel(r"Percentage desulfurization at equilibrium")
 ax2.set_ylim(0, 100)
 
 ax2.grid(ls='--', which='both', color='lightgray')
@@ -442,8 +442,8 @@ def plot_Msl_surf(Ls:float)->None:
     CS3 = ax3.contourf(X, Y, Z, levels=[0, 5, 10, 15, 20, 25, 30])
     cbar3 = fig3.colorbar(CS3, ax=ax3)
     
-    ax3.set_xlabel("ppm S (inicial)")
-    ax3.set_ylabel("ppm S (equilibrio)")
+    ax3.set_xlabel("ppm S (initial)")
+    ax3.set_ylabel("ppm S (equilibrium)")
     
     cbar3.ax.set_ylabel(r'Masa de escoria $M_{sl}$, [kg/ton]')
     
@@ -539,8 +539,8 @@ def plot_desulfRate(sol):
     wS = sol.y[0] # azufre al tiempo t, [wt%]
     
     ax.plot(t, wS)
-    ax.set_xlabel("tiempo de refinación [min]")
-    ax.set_ylabel("Contenido de azufre en el metal [wt%]")
+    ax.set_xlabel("Process time [min]")
+    ax.set_ylabel("Sulfur content in the metal [wt%]")
     
     ax.grid(ls='--', color='lightgray')
 ```
