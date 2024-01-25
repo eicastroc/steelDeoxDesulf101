@@ -10,6 +10,7 @@ Course contents can be accessed [here](https://eicastroc.github.io/steelDeoxDesu
 
 1. [Fundamentals of steel deoxidation](src/en/Deox.py)
 2. [Fundamentals of steel desulfurization](src/en/Desulf.py)
+3. [Extreme value statistics for microstructural characterization](src/en/EVGumbel-EN.py)
 
 ### French
 
@@ -23,6 +24,7 @@ Coming soon...
 
 1. [Fundamentos de desoxidación de aceros](src/es/Deox.py)
 2. [Fundamentos de desulfuración de aceros](src/es/Desulf.py)
+3. [Estadística de valores extremos para caracterización microestructural](src/es/EVGumbel-ES.py)
 
 ## Usage
 
