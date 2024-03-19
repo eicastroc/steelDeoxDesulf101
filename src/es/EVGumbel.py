@@ -1,17 +1,35 @@
-#!/usr/bin/env python
-# coding: utf-8
+# ---
+# jupyter:
+#   jupytext:
+#     formats: ipynb,py:percent
+#     text_representation:
+#       extension: .py
+#       format_name: percent
+#       format_version: '1.3'
+#       jupytext_version: 1.15.2
+#   kernelspec:
+#     display_name: Python 3 (ipykernel)
+#     language: python
+#     name: python3
+# ---
 
-# In[1]:
+# %% [markdown]:
+# # Estadística de Valores Extremos
+#
+# **Dr. Edgar Ivan Castro Cedeño**
+#
+# [edgar.castro@cinvestav.mx](mailto:edgar.castro@cinvestav.mx)
 
-
+# %%
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.stats import gumbel_r
 
-
+# %% [markdown]
 # # Contexto metalúrgico
 
+# %% [markdown]
 # La estadística de valores extremos es una rama de la estadística que se interesa en estimar la probabilidad de que ocurra un evento más extremo que cualquier evento observado previamente.
 # 
 # Dentro del contexto de calidad metalúrgica y de caracterización de materiales, un evento extremo podría ser la probabilidad de que una característica microstructural en un material (e.g., inclusiones, hojuelas de grafito, precipitados, porosidades, cavidades, etc.) sea más grande que a un tamaño crítico. En este contexto, la Distribución (Gumbel) de Valores Extremos se utiliza para estimar las probabilidades.
@@ -25,12 +43,16 @@ from scipy.stats import gumbel_r
 # 
 # Al final de este Notebook, se provee una sección con  **Referencias**.
 
+# %% [markdown]
 # # Fundamentos de Análisis de Valores Extremos
 
+# %% [markdown]
 # En esta sección se presenta primeramente la Distribución Empírica (de Probabilidad Acumulada). Después se presenta la Distribución (Gumbel) de Valores Extremos, junto con dos metodologías para la estimación de los parámetros de la distribución (método de momentos, y método de la máxima verosimilitud). Finalmente, se presenta el procedimiento para la construcción de un gráfico de Gumbel. 
 
+# %% [markdown]
 # ## Distribución Empírica
 
+# %% [markdown]
 # Cada una de las $N$ mediciones de tamaño de una característica microestructural se puede representar como $x_i$, en donde $1 \le i \le N$.
 # 
 # Para estimar la __Distribución Empírica__, los datos de tamaño de una característica microestructural, $x_i$, se ordenan en orden ascendente de tal forma que:
@@ -43,9 +65,8 @@ from scipy.stats import gumbel_r
 # 
 # La función `eCDF()`, presenta una implementación de la Distribución empírica:
 
-# In[2]:
 
-
+# %%
 def eCDF(df:str | pd.DataFrame):
     """ 
     empirical cumulative distribution function for inclusion size,
@@ -77,12 +98,13 @@ def eCDF(df:str | pd.DataFrame):
     ecdf = np.linspace(1, Nvalues, Nvalues) / (Nvalues+1)    # estimate ecdf
     return Ysorted, ecdf
 
-
+# %% [markdown]
 # ## Distribución (Gumbel) de Valores Extremos
 
+# %% [markdown]
 # ### Funciones de densidad de probabilidad (PDF) y densidad acumulada (CDF)
 
-# 
+# %% [markdown]
 # La función de densidad de probabilidad (PDF) para la Distribución (Gumbel) de Valores Extremos está dada por:
 # 
 # $$f(x) = \frac{1}{\delta} \left[\exp\left(-\frac{x-\lambda}{\delta}\right)\right] \times \exp\left[-\exp\left(-\frac{x-\lambda}{\delta}\right)\right]$$
@@ -100,8 +122,10 @@ def eCDF(df:str | pd.DataFrame):
 # 
 # - $\delta$: parámetro de escala de la Distribución (Gumbel) de Valores Extremos.
 
+# %% [markdown]
 # ### Estimación de parámetros de la distribución (Método de momentos)
 
+# %% [markdown]
 # Los parámetros de la Distribución (Gumbel) de Valores Extremos se estiman mediante las siguientes ecuaciones:
 # 
 # $$\delta_{mom} = \frac{s \, \sqrt{6}}{\pi}$$
@@ -121,9 +145,8 @@ def eCDF(df:str | pd.DataFrame):
 # 
 # La función `fitEVmom()` es una implementación del procedimiento para estimar los parámetros de la Distribución (Gumbel) de Valores Extremos mediante el método de momentos.
 
-# In[3]:
 
-
+# %%
 def fitEVmom(df:str | pd.DataFrame, verbose:bool = True):
     """
     Fit (Gumbel) Extreme Value distribution to measurements
@@ -161,9 +184,10 @@ def fitEVmom(df:str | pd.DataFrame, verbose:bool = True):
         print('*MoM est.')
     return lamb, delta    
 
-
+# %% [markdown]
 # ### Estimación de parámetros de la distribución (Método de máxima verosimilitud)
 
+# %% [markdown]
 # El método de máxima verosimilitud se basa en el postulado que el mejor estimado de parámetros para la distribución es aquel que maximice la verosimilitud entre la distribución y los datos de tamaño de característica microestructural. Este procedimiento se lleva a cabo mediante un método numérico en el cuál se buscan los parámetros de distribución que maximicen una función objetivo dada por la suma de los logaritmos de la función de densidad de probabilidad evaluada para todos los datos. Cuando se utiliza logaritmo natural, la función de optimización es de la forma:
 # 
 # $$LL=\sum_{i=1}^{N} \ln \left(f\left(x_i, \lambda, \delta \right) \right)$$
@@ -173,9 +197,8 @@ def fitEVmom(df:str | pd.DataFrame, verbose:bool = True):
 # 
 # La función `fitEVml()`, es un wrapper para la clase `gumbel_r` de la librería `scipy.stats`, que permite estimar los parámetros mediante el método de máxima verosimilitud.
 
-# In[4]:
 
-
+# %%
 def fitEVml(df:str | pd.DataFrame, verbose:bool = True):
     """
     Fit (Gumbel) Extreme Value distribution to measurements
@@ -213,8 +236,10 @@ def fitEVml(df:str | pd.DataFrame, verbose:bool = True):
     return lamb, delta
 
 
+# %% [markdown]
 # ### Intervalo de confianza para la estimaciones de tamaño de características microestructurales
 
+# %% [markdown]
 # El error estándar para el tamaño de una característica microestructural, $x$, basado en los résultados del método de máxima verosimilitud, está dado por:
 # 
 # 
@@ -236,9 +261,8 @@ def fitEVml(df:str | pd.DataFrame, verbose:bool = True):
 # 
 # - $N$: numero de datos de mediciones utilizadas en el proceso de ajuste de la Distribución (Gumbel) de Valores Extremos.
 
-# In[5]:
 
-
+# %%
 def calcSE(x:float, lamb:float, delta:float, N:int):
     """
     Estimate the Standard Error (SE) of size estimation for
@@ -266,12 +290,16 @@ def calcSE(x:float, lamb:float, delta:float, N:int):
     return SE
 
 
+# %% [markdown]
 # ## Gráfico de Gumbel
 
+# %% [markdown]
 # El gráfico de Gumbel es una herramienta de visualización desarrollada en tiempos en los que no había acceso a computadoras para el público en general. Originalmente, este tipo de gráficos se hacían trazando a mano la función de probabilidad acumulada de la Distribución (Gumbel) de Valores Extremos linealizada y los puntos de datos en papel logarítmico de dos ciclos.
 
+# %% [markdown]
 # ### Linealización de la función de probabilidad acumulada:
 
+# %% [markdown]
 # Primeramente, se define a la __variable reducida__, $y$, como:
 # 
 # $$y = \frac{x - \lambda}{\delta}$$
@@ -292,9 +320,8 @@ def calcSE(x:float, lamb:float, delta:float, N:int):
 # 
 # La función `calcRedVar()`, es una implementación del proceso para linealizar la función de probabilidad acumulada de la Distribución (Gumbel) de Valores Extremos:
 
-# In[6]:
 
-
+# %%
 def calcRedVar(F:float):
     """ 
     reduced variable, y, used in the procedure of linearization 
@@ -314,6 +341,7 @@ def calcRedVar(F:float):
     return y
 
 
+# %% [markdown]
 # Una vez que se hayan obtenido los mejores estimados para el parámetro de locación $(\lambda)$ y escala $(\delta)$, se puede estimar el tamaño máximo esperado de una característica microestructural, para una probabilidad dada, usando la ecuación:
 # 
 # $$x = \delta y + \lambda$$
@@ -324,31 +352,36 @@ def calcRedVar(F:float):
 # 
 # Esto corresponde a la ecuación de una línea recta, en la que la pendiente está dada por el parámetro de escala $(\delta)$, y el intercepto está dado por el parámetro de locación $(\lambda)$.
 
+# %% [markdown]
 # ### Construcción de un gráfico de Gumbel
 
+# %% [markdown]
 # El desarrollo inicial del gráfico de Gumbel se llevó a cabo antes de la disponibilidad masiva de métodos computacionales. Es por eso, que este tipo de gráficos eran útiles para estimar mediante métodos gráficos los valores de los parámetros de la Distribución (Gumbel) de Valores Extremos. Al día de hoy, sirven como herramienta gráfica para verificar el buen ajuste de la distribución a los datos.
 # 
 # Los pasos para construír un gráfico de Gumbel son los siguientes:
 
+# %% [markdown]
 # - Procesar la serie de datos utilizando la Distribución Empírica:
 #     - Ordenar las mediciones de tamaño de característica microestructural, $x$, in orden ascendiente.
 #     - Estimar los valores de la Distribución Empírica, $P$, para la serie de datos.
 #     - Estimar el valor de la variable reducida que corresponde a la Distribución empírica ajustada previamente: $y=-\ln\left(-\ln\left(P\right)\right)$.
 
+# %% [markdown]
 # - Utilizar un método para ajustar la Distribución (Gumbel) de Valores extremos a la serie de datos:
 #     - Utilizar el método de momentos o el método de máxima verosimilitud para obtener estimados de los parámetros de la distribución, $\delta$ y $\lambda$.
 #     - Obtener estimados de tamaños de la característica microestructural, $X_{ML}$, para las probabilidad empíricas estimadas para la serie de datos, $P$.
 
+# %% [markdown]
 # - Graficar los datos:
 #     - Graficar la distribución empírica linealizada contra las mediciones ordenadas, $-\ln\left(-\ln\left(P\right)\right)$ vs $x$.
 #     - Graficar la distribución empírica linealizada contra las estimaciones dadas por la Distribución (Gumbel) de Valores Extremos, $-\ln\left(-\ln\left(P\right)\right)$ vs $x_{ML}$.
 #     - Graficar los intervalos de confianza.
 
+# %% [markdown]
 # La función `gumbelPlot()`, presenta una implementación del prodimiento para construír un gráfico de Gumbel.
 
-# In[7]:
 
-
+# %%
 def gumbelPlot(df:str | pd.DataFrame, gamma:float = None, delta:float = None, ax=None):
 
     if ax==None:
@@ -388,46 +421,41 @@ def gumbelPlot(df:str | pd.DataFrame, gamma:float = None, delta:float = None, ax
                 xy=(0.15, 0.75), xycoords='subfigure fraction')
 
 
+# %% [markdown]
 # # Ejemplo de aplicación de Análisis de Valores Extremos
 
+# %% [markdown]
 # Los datos utilizados en este ejemplo se tomaron de la norma ASTM E-2283. Los datos están constituidos por 24 mediciones del tamaño más grande de inclusión observada en seis especímenes de acero (specimen: 1-6), en un procedimiento que se repite cuatro veces (run: A - D).
 # 
 # Debajo, los datos se ponen en un formato Pandas DataFrame, y se utiliza la función `gumbelPlot()` para ajustar la Distribución (Gumbel) de Valores Extremos a los datos, y trazar un gráfico de Gumbel para los mismos.
 
-# In[8]:
-
-
+# %%
 # Datos de la norma ASTM-E2283
 specimen = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]
 run = ['A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'D']
 Y = [40.29, 37.24, 29.03, 52.46, 62.21, 33.98, 30.73, 37.43, 35.00, 44.82, 66.13, 48.55, 73.48, 44.79, 70.87, 59.83, 22.18, 64.32, 78.91, 46.53, 94.28, 49.15, 82.39, 37.43]
 
-
-# In[9]:
-
-
+# %%
 # Construir el DataFrame
 df = pd.DataFrame(list(zip(run, specimen, Y)),
                      columns=['run', 'specimen', 'Y'])
 
 
-# In[10]:
-
-
+# %%
 # Mostrar el DataFrame
 #df.sort_values(by='Y', ascending=True, inplace=True) # uncomment for sorting by size
 display(df)
 
 
-# In[11]:
-
-
+# %%
 # Construir el gráfico de Gumbel (con estimación de parámetros)
 gumbelPlot(df)
 
 
+# %% [markdown]
 # # Referencias
 
+# %% [markdown]
 # - Norma ASTM: [ASTM E2283: Standard Practice for Extreme Value Analysis of Nonmetallic Inclusions in Steel and Other Microstructural Features](https://www.astm.org/e2283-08r19.html)
 # 
 # - Libro: [Y. Murakami, Metal Fatigue (2002)](https://www.sciencedirect.com/book/9780080440644/metal-fatigue)
