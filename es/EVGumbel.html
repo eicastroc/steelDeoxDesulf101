@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; steelDeoxDesulf101</title>
+    <title>Estadística de Valores Extremos &#8212; steelDeoxDesulf101</title>
   
   
   
@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'es/EVGumbel';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -317,7 +319,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Estadística de Valores Extremos</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -326,7 +328,27 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Estadística de Valores Extremos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contexto-metalurgico">Contexto metalúrgico</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-de-analisis-de-valores-extremos">Fundamentos de Análisis de Valores Extremos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-empirica">Distribución Empírica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-gumbel-de-valores-extremos">Distribución (Gumbel) de Valores Extremos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-de-densidad-de-probabilidad-pdf-y-densidad-acumulada-cdf">Funciones de densidad de probabilidad (PDF) y densidad acumulada (CDF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimacion-de-parametros-de-la-distribucion-metodo-de-momentos">Estimación de parámetros de la distribución (Método de momentos)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimacion-de-parametros-de-la-distribucion-metodo-de-maxima-verosimilitud">Estimación de parámetros de la distribución (Método de máxima verosimilitud)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intervalo-de-confianza-para-la-estimaciones-de-tamano-de-caracteristicas-microestructurales">Intervalo de confianza para la estimaciones de tamaño de características microestructurales</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-gumbel">Gráfico de Gumbel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linealizacion-de-la-funcion-de-probabilidad-acumulada">Linealización de la función de probabilidad acumulada:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion-de-un-grafico-de-gumbel">Construcción de un gráfico de Gumbel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-aplicacion-de-analisis-de-valores-extremos">Ejemplo de aplicación de Análisis de Valores Extremos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referencias</a></li>
 </ul>
 
             </nav>
@@ -339,7 +361,619 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  
+  <section class="tex2jax_ignore mathjax_ignore" id="estadistica-de-valores-extremos">
+<h1>Estadística de Valores Extremos<a class="headerlink" href="#estadistica-de-valores-extremos" title="Permalink to this heading">#</a></h1>
+<p><strong>Dr. Edgar Ivan Castro Cedeño</strong></p>
+<p><a class="reference external" href="mailto:edgar&#46;castro&#37;&#52;&#48;cinvestav&#46;mx">edgar<span>&#46;</span>castro<span>&#64;</span>cinvestav<span>&#46;</span>mx</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">gumbel_r</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="contexto-metalurgico">
+<h1>Contexto metalúrgico<a class="headerlink" href="#contexto-metalurgico" title="Permalink to this heading">#</a></h1>
+<p>La estadística de valores extremos es una rama de la estadística que se interesa en estimar la probabilidad de que ocurra un evento más extremo que cualquier evento observado previamente.</p>
+<p>Dentro del contexto de calidad metalúrgica y de caracterización de materiales, un evento extremo podría ser la probabilidad de que una característica microstructural en un material (e.g., inclusiones, hojuelas de grafito, precipitados, porosidades, cavidades, etc.) sea más grande que a un tamaño crítico. En este contexto, la Distribución (Gumbel) de Valores Extremos se utiliza para estimar las probabilidades.</p>
+<p>El objetivo de este Notebook es proveer una guía práctica para realizar análisis de características microestructurales de materiales, utilizando librerías de Python. Se presentan dos temas:</p>
+<ol class="arabic simple">
+<li><p>Estimación de parámetros de la Distribución (Gumbel) de Valores Extremos.</p></li>
+<li><p>Construcción de gráficos de Gumbel.</p></li>
+</ol>
+<p>Al final de este Notebook, se provee una sección con  <strong>Referencias</strong>.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="fundamentos-de-analisis-de-valores-extremos">
+<h1>Fundamentos de Análisis de Valores Extremos<a class="headerlink" href="#fundamentos-de-analisis-de-valores-extremos" title="Permalink to this heading">#</a></h1>
+<p>En esta sección se presenta primeramente la Distribución Empírica (de Probabilidad Acumulada). Después se presenta la Distribución (Gumbel) de Valores Extremos, junto con dos metodologías para la estimación de los parámetros de la distribución (método de momentos, y método de la máxima verosimilitud). Finalmente, se presenta el procedimiento para la construcción de un gráfico de Gumbel.</p>
+<section id="distribucion-empirica">
+<h2>Distribución Empírica<a class="headerlink" href="#distribucion-empirica" title="Permalink to this heading">#</a></h2>
+<p>Cada una de las <span class="math notranslate nohighlight">\(N\)</span> mediciones de tamaño de una característica microestructural se puede representar como <span class="math notranslate nohighlight">\(x_i\)</span>, en donde <span class="math notranslate nohighlight">\(1 \le i \le N\)</span>.</p>
+<p>Para estimar la <strong>Distribución Empírica</strong>, los datos de tamaño de una característica microestructural, <span class="math notranslate nohighlight">\(x_i\)</span>, se ordenan en orden ascendente de tal forma que:</p>
+<div class="math notranslate nohighlight">
+\[x_1 \le x_2 \le x_3 \ldots \le x_N\]</div>
+<p>La distribución empírica se calcula como:</p>
+<div class="math notranslate nohighlight">
+\[P_i = \frac{i}{N+1}\]</div>
+<p>La función <code class="docutils literal notranslate"><span class="pre">eCDF()</span></code>, presenta una implementación de la Distribución empírica:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">eCDF</span><span class="p">(</span><span class="n">df</span><span class="p">:</span><span class="nb">str</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    empirical cumulative distribution function for inclusion size,</span>
+<span class="sd">    or any other microstructural feature that can be analyzed with</span>
+<span class="sd">    Extreme Value methodology.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df: pandas.DataFrame</span>
+<span class="sd">        data of measurements with three columns: [run, specimen, Y].</span>
+<span class="sd">        The column names are in concordance with ASTM E2283 nomenclature.</span>
+<span class="sd">            - run: a string identifying each of the four runs: [A, B, C, D].</span>
+<span class="sd">            - specimen: An integer identifying a set of measurements over a</span>
+<span class="sd">                          defined surface area (for inclusions, 150 microns).</span>
+<span class="sd">                          For each run, 6 specimens are required: [1, 2, 3, 5, 6].</span>
+<span class="sd">            - Y: Measurements of the microstructural feature that will be studied </span>
+<span class="sd">                    using Extreme Value Methodology. In the case of inclusions, </span>
+<span class="sd">                    Y correponds to the longest inclusion length in an specimen.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Ysorted: np.ndarray</span>
+<span class="sd">        microstructural feature measurements, in ascending order.</span>
+<span class="sd">    ecdf: numpy.ndarray</span>
+<span class="sd">        empirical cumulative distribution function values.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">Ysorted</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Y</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>  <span class="c1"># sort values</span>
+    <span class="n">Nvalues</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Ysorted</span><span class="p">)</span>
+    <span class="n">ecdf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Nvalues</span><span class="p">,</span> <span class="n">Nvalues</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">Nvalues</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>    <span class="c1"># estimate ecdf</span>
+    <span class="k">return</span> <span class="n">Ysorted</span><span class="p">,</span> <span class="n">ecdf</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="distribucion-gumbel-de-valores-extremos">
+<h2>Distribución (Gumbel) de Valores Extremos<a class="headerlink" href="#distribucion-gumbel-de-valores-extremos" title="Permalink to this heading">#</a></h2>
+<section id="funciones-de-densidad-de-probabilidad-pdf-y-densidad-acumulada-cdf">
+<h3>Funciones de densidad de probabilidad (PDF) y densidad acumulada (CDF)<a class="headerlink" href="#funciones-de-densidad-de-probabilidad-pdf-y-densidad-acumulada-cdf" title="Permalink to this heading">#</a></h3>
+<p>La función de densidad de probabilidad (PDF) para la Distribución (Gumbel) de Valores Extremos está dada por:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \frac{1}{\delta} \left[\exp\left(-\frac{x-\lambda}{\delta}\right)\right] \times \exp\left[-\exp\left(-\frac{x-\lambda}{\delta}\right)\right]\]</div>
+<p>La función de densidad acumulada (CDF) está dada por:</p>
+<div class="math notranslate nohighlight">
+\[F(x) = \exp\left(-\exp\left(-\frac{x - \lambda}{\delta}\right)\right)\]</div>
+<p>donde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x\)</span>: tamaño de la característica microestructural más grande en un área de control, <span class="math notranslate nohighlight">\(A_0\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span>: parámetro de locación de la Distribución (Gumbel) de Valores Extremos.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta\)</span>: parámetro de escala de la Distribución (Gumbel) de Valores Extremos.</p></li>
+</ul>
+</section>
+<section id="estimacion-de-parametros-de-la-distribucion-metodo-de-momentos">
+<h3>Estimación de parámetros de la distribución (Método de momentos)<a class="headerlink" href="#estimacion-de-parametros-de-la-distribucion-metodo-de-momentos" title="Permalink to this heading">#</a></h3>
+<p>Los parámetros de la Distribución (Gumbel) de Valores Extremos se estiman mediante las siguientes ecuaciones:</p>
+<div class="math notranslate nohighlight">
+\[\delta_{mom} = \frac{s \, \sqrt{6}}{\pi}\]</div>
+<div class="math notranslate nohighlight">
+\[\lambda_{mom} = \bar{X} - 0.5772 \, \delta_{mom}\]</div>
+<p>El subindice, <span class="math notranslate nohighlight">\(_{mom}\)</span> , indica que los estimados se obtienen por el método de momentos, en el cuál:</p>
+<ul class="simple">
+<li><p>El primer momento es el promedio del tamaño más grande de la característica microestructural, <span class="math notranslate nohighlight">\(\bar{X}\)</span>, calculado a partir de la serie de datos:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\bar{X} = \frac{1}{N} \sum_{i=1}^{n} x_i\]</div>
+<ul class="simple">
+<li><p>La raíz cuadrada del segundo momento es la desviación estandar de la serie de datos:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[s = \left[\sum_{i=1}^{N} \frac{\left(x_i - \bar{X}\right)^2}{N-1}\right]^{0.5}\]</div>
+<p>La función <code class="docutils literal notranslate"><span class="pre">fitEVmom()</span></code> es una implementación del procedimiento para estimar los parámetros de la Distribución (Gumbel) de Valores Extremos mediante el método de momentos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fitEVmom</span><span class="p">(</span><span class="n">df</span><span class="p">:</span><span class="nb">str</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">verbose</span><span class="p">:</span><span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Fit (Gumbel) Extreme Value distribution to measurements</span>
+<span class="sd">    of a microstructural feature (e.g., inclusion size) using</span>
+<span class="sd">    Moments Method (as presented in ASTM E2283 norm)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df: pandas.DataFrame</span>
+<span class="sd">        data of measurements with three columns: [run, specimen, Y].</span>
+<span class="sd">        The column names are in concordance with ASTM E2283 nomenclature.</span>
+<span class="sd">            - run: a string identifying each of the four runs: [A, B, C, D].</span>
+<span class="sd">            - specimen: An integer identifying a set of measurements over a</span>
+<span class="sd">                          defined control area.</span>
+<span class="sd">                          For each run, 6 specimens are required: [1, 2, 3, 5, 6].</span>
+<span class="sd">            - Y: Measurements of the microstructural feature that will be studied </span>
+<span class="sd">                    using Extreme Value Methodology. In the case of inclusions, </span>
+<span class="sd">                    Y correponds to the longest inclusion length in an specimen.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    lamb: Float</span>
+<span class="sd">        location parameter of the fitted (Gumbel) Extreme Value distriution.</span>
+<span class="sd">    delta: Float</span>
+<span class="sd">        scale parameter of the fitted (Gumbel) Extreme Value distriution.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">Ymean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Y</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1"># mean</span>
+    <span class="n">Ystd</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Y</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>   <span class="c1"># std. dev. pop.</span>
+    <span class="n">delta</span> <span class="o">=</span> <span class="n">Ystd</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>   <span class="c1"># scale parameter</span>
+    <span class="n">lamb</span> <span class="o">=</span> <span class="n">Ymean</span> <span class="o">-</span> <span class="mf">0.5772</span> <span class="o">*</span> <span class="n">delta</span>       <span class="c1"># location parameter</span>
+    <span class="k">if</span> <span class="n">verbose</span><span class="o">==</span><span class="kc">True</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Gumbel distribution params.&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;lambda: </span><span class="si">{:.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lamb</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;delta : </span><span class="si">{:.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">delta</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*MoM est.&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">lamb</span><span class="p">,</span> <span class="n">delta</span>    
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="estimacion-de-parametros-de-la-distribucion-metodo-de-maxima-verosimilitud">
+<h3>Estimación de parámetros de la distribución (Método de máxima verosimilitud)<a class="headerlink" href="#estimacion-de-parametros-de-la-distribucion-metodo-de-maxima-verosimilitud" title="Permalink to this heading">#</a></h3>
+<p>El método de máxima verosimilitud se basa en el postulado que el mejor estimado de parámetros para la distribución es aquel que maximice la verosimilitud entre la distribución y los datos de tamaño de característica microestructural. Este procedimiento se lleva a cabo mediante un método numérico en el cuál se buscan los parámetros de distribución que maximicen una función objetivo dada por la suma de los logaritmos de la función de densidad de probabilidad evaluada para todos los datos. Cuando se utiliza logaritmo natural, la función de optimización es de la forma:</p>
+<div class="math notranslate nohighlight">
+\[LL=\sum_{i=1}^{N} \ln \left(f\left(x_i, \lambda, \delta \right) \right)\]</div>
+<p>para la cual, el procedimiento de optimización consiste en encontrar los valores de <span class="math notranslate nohighlight">\(\lambda_{ML}\)</span> y <span class="math notranslate nohighlight">\(\delta_{ML}\)</span> que maximicen el valor de <span class="math notranslate nohighlight">\(LL\)</span>. El subídice <span class="math notranslate nohighlight">\(_{ML}\)</span>, indica que los estimados son obtenidos mediante el método de máxima verosimilitud.</p>
+<p>La función <code class="docutils literal notranslate"><span class="pre">fitEVml()</span></code>, es un wrapper para la clase <code class="docutils literal notranslate"><span class="pre">gumbel_r</span></code> de la librería <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>, que permite estimar los parámetros mediante el método de máxima verosimilitud.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fitEVml</span><span class="p">(</span><span class="n">df</span><span class="p">:</span><span class="nb">str</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">verbose</span><span class="p">:</span><span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Fit (Gumbel) Extreme Value distribution to measurements</span>
+<span class="sd">    of a microstructural feature (e.g., inclusion size) using</span>
+<span class="sd">    Maximum Likelihood methods (as implemented in scipy.stats)</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df: pandas.DataFrame</span>
+<span class="sd">        data of measurements with three columns: [run, specimen, Y].</span>
+<span class="sd">        The column names are in concordance with ASTM E2283 nomenclature.</span>
+<span class="sd">            - run: a string identifying each of the four runs: [A, B, C, D].</span>
+<span class="sd">            - specimen: An integer identifying a set of measurements over a</span>
+<span class="sd">                          defined control area.</span>
+<span class="sd">                          For each run, 6 specimens are required: [1, 2, 3, 5, 6].</span>
+<span class="sd">            - Y: Measurements of the microstructural feature that will be studied </span>
+<span class="sd">                    using Extreme Value Methodology. In the case of inclusions, </span>
+<span class="sd">                    Y correponds to the longest inclusion length in an specimen.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    lamb: Float</span>
+<span class="sd">        location parameter of the fitted (Gumbel) Extreme Value distriution.</span>
+<span class="sd">    delta: Float</span>
+<span class="sd">        scale parameter of the fitted (Gumbel) Extreme Value distriution.</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
+    <span class="n">evDist</span> <span class="o">=</span> <span class="n">gumbel_r</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Y</span><span class="p">)</span> <span class="c1">#ML fitting</span>
+    <span class="n">delta</span> <span class="o">=</span> <span class="n">evDist</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>   <span class="c1"># scale parameter</span>
+    <span class="n">lamb</span> <span class="o">=</span> <span class="n">evDist</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>    <span class="c1"># location parameter</span>
+    <span class="k">if</span> <span class="n">verbose</span><span class="o">==</span><span class="kc">True</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Gumbel distribution params.&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;lambda: </span><span class="si">{:.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lamb</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;delta : </span><span class="si">{:.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">delta</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*ML est.&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">lamb</span><span class="p">,</span> <span class="n">delta</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="intervalo-de-confianza-para-la-estimaciones-de-tamano-de-caracteristicas-microestructurales">
+<h3>Intervalo de confianza para la estimaciones de tamaño de características microestructurales<a class="headerlink" href="#intervalo-de-confianza-para-la-estimaciones-de-tamano-de-caracteristicas-microestructurales" title="Permalink to this heading">#</a></h3>
+<p>El error estándar para el tamaño de una característica microestructural, <span class="math notranslate nohighlight">\(x\)</span>, basado en los résultados del método de máxima verosimilitud, está dado por:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{SE}(x) = \delta \sqrt{\frac{1.109+0.514\,y+0.608\,y^2}{N}}\]</div>
+<p>El intervalor de confianza de 95% está dado por:</p>
+<div class="math notranslate nohighlight">
+\[95\%\,\mathrm{CI} = \pm 2\, \mathrm{SE}(x)\]</div>
+<p>donde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x\)</span>: tamaño de la característica microestructural.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span>: parámetro de locación de la Distribución (Gumbel) de Valores Extremos.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta\)</span>: parámetro de escala de la Distribución (Gumbel) de Valores Extremos.</p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span>: variable reducida, definida como: <span class="math notranslate nohighlight">\(y=\frac{x - \lambda}{\delta}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(N\)</span>: numero de datos de mediciones utilizadas en el proceso de ajuste de la Distribución (Gumbel) de Valores Extremos.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcSE</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span> <span class="n">lamb</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span> <span class="n">delta</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span> <span class="n">N</span><span class="p">:</span><span class="nb">int</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Estimate the Standard Error (SE) of size estimation for</span>
+<span class="sd">    a population of microstructural features that has been fit</span>
+<span class="sd">    to the (Gumbel) Extreme Value distribution.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x: Float</span>
+<span class="sd">        size of microstructural feature</span>
+<span class="sd">    lamb: Float</span>
+<span class="sd">        location parameter of the fitted (Gumbel) Extreme Value distribution.</span>
+<span class="sd">    delta: Float</span>
+<span class="sd">        scale parameter of the fitted (Gumbel) Extreme Value distribution.</span>
+<span class="sd">    N: Int</span>
+<span class="sd">        number of measurements</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    SE: Float</span>
+<span class="sd">        standard error of size estimations</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">lamb</span><span class="p">)</span> <span class="o">/</span> <span class="n">delta</span>
+    <span class="n">SE</span> <span class="o">=</span> <span class="n">delta</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mf">1.109</span> <span class="o">+</span> <span class="mf">0.514</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mf">0.608</span><span class="o">*</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">N</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">SE</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="grafico-de-gumbel">
+<h2>Gráfico de Gumbel<a class="headerlink" href="#grafico-de-gumbel" title="Permalink to this heading">#</a></h2>
+<p>El gráfico de Gumbel es una herramienta de visualización desarrollada en tiempos en los que no había acceso a computadoras para el público en general. Originalmente, este tipo de gráficos se hacían trazando a mano la función de probabilidad acumulada de la Distribución (Gumbel) de Valores Extremos linealizada y los puntos de datos en papel logarítmico de dos ciclos.</p>
+<section id="linealizacion-de-la-funcion-de-probabilidad-acumulada">
+<h3>Linealización de la función de probabilidad acumulada:<a class="headerlink" href="#linealizacion-de-la-funcion-de-probabilidad-acumulada" title="Permalink to this heading">#</a></h3>
+<p>Primeramente, se define a la <strong>variable reducida</strong>, <span class="math notranslate nohighlight">\(y\)</span>, como:</p>
+<div class="math notranslate nohighlight">
+\[y = \frac{x - \lambda}{\delta}\]</div>
+<p>Entonces, la función de probabilidad acumulada de la Distribución (Gumbel) de Valores Extremos, <span class="math notranslate nohighlight">\(F(x)\)</span>, se puede reescribir en función de <span class="math notranslate nohighlight">\(y\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[F(x) = \exp\left(-\exp\left(-\frac{x - \lambda}{\delta}\right)\right)\]</div>
+<div class="math notranslate nohighlight">
+\[F(y) = \exp\left(-\exp\left(-y\right)\right)\]</div>
+<p>La función linealizada se puede reescribir posteriormente como:</p>
+<div class="math notranslate nohighlight">
+\[-\ln\left(-\ln\left(F(x)\right)\right) = \frac{x - \lambda}{\delta}\]</div>
+<div class="math notranslate nohighlight">
+\[-\ln\left(-\ln\left(F(y)\right)\right) = y\]</div>
+<p>en donde <span class="math notranslate nohighlight">\(F(x) = F(y) = P\)</span>, es la probabilidad de que la característica microestructural más grande sea tan grande como el tamaño <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>La función <code class="docutils literal notranslate"><span class="pre">calcRedVar()</span></code>, es una implementación del proceso para linealizar la función de probabilidad acumulada de la Distribución (Gumbel) de Valores Extremos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcRedVar</span><span class="p">(</span><span class="n">F</span><span class="p">:</span><span class="nb">float</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    reduced variable, y, used in the procedure of linearization </span>
+<span class="sd">    of the (Gumbel) Extreme Value CDF.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    F: float</span>
+<span class="sd">        Cumulative density function F(y)</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    y: float</span>
+<span class="sd">        linealized (Gumbel) Extreme Value cumulative density function.</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
+    <span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">F</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Una vez que se hayan obtenido los mejores estimados para el parámetro de locación <span class="math notranslate nohighlight">\((\lambda)\)</span> y escala <span class="math notranslate nohighlight">\((\delta)\)</span>, se puede estimar el tamaño máximo esperado de una característica microestructural, para una probabilidad dada, usando la ecuación:</p>
+<div class="math notranslate nohighlight">
+\[x = \delta y + \lambda\]</div>
+<p>o</p>
+<div class="math notranslate nohighlight">
+\[x = \delta \left[-\ln\left(-\ln\left(P\right)\right)\right] + \lambda\]</div>
+<p>Esto corresponde a la ecuación de una línea recta, en la que la pendiente está dada por el parámetro de escala <span class="math notranslate nohighlight">\((\delta)\)</span>, y el intercepto está dado por el parámetro de locación <span class="math notranslate nohighlight">\((\lambda)\)</span>.</p>
+</section>
+<section id="construccion-de-un-grafico-de-gumbel">
+<h3>Construcción de un gráfico de Gumbel<a class="headerlink" href="#construccion-de-un-grafico-de-gumbel" title="Permalink to this heading">#</a></h3>
+<p>El desarrollo inicial del gráfico de Gumbel se llevó a cabo antes de la disponibilidad masiva de métodos computacionales. Es por eso, que este tipo de gráficos eran útiles para estimar mediante métodos gráficos los valores de los parámetros de la Distribución (Gumbel) de Valores Extremos. Al día de hoy, sirven como herramienta gráfica para verificar el buen ajuste de la distribución a los datos.</p>
+<p>Los pasos para construír un gráfico de Gumbel son los siguientes:</p>
+<ul class="simple">
+<li><p>Procesar la serie de datos utilizando la Distribución Empírica:</p>
+<ul>
+<li><p>Ordenar las mediciones de tamaño de característica microestructural, <span class="math notranslate nohighlight">\(x\)</span>, in orden ascendiente.</p></li>
+<li><p>Estimar los valores de la Distribución Empírica, <span class="math notranslate nohighlight">\(P\)</span>, para la serie de datos.</p></li>
+<li><p>Estimar el valor de la variable reducida que corresponde a la Distribución empírica ajustada previamente: <span class="math notranslate nohighlight">\(y=-\ln\left(-\ln\left(P\right)\right)\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Utilizar un método para ajustar la Distribución (Gumbel) de Valores extremos a la serie de datos:</p>
+<ul>
+<li><p>Utilizar el método de momentos o el método de máxima verosimilitud para obtener estimados de los parámetros de la distribución, <span class="math notranslate nohighlight">\(\delta\)</span> y <span class="math notranslate nohighlight">\(\lambda\)</span>.</p></li>
+<li><p>Obtener estimados de tamaños de la característica microestructural, <span class="math notranslate nohighlight">\(X_{ML}\)</span>, para las probabilidad empíricas estimadas para la serie de datos, <span class="math notranslate nohighlight">\(P\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Graficar los datos:</p>
+<ul>
+<li><p>Graficar la distribución empírica linealizada contra las mediciones ordenadas, <span class="math notranslate nohighlight">\(-\ln\left(-\ln\left(P\right)\right)\)</span> vs <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+<li><p>Graficar la distribución empírica linealizada contra las estimaciones dadas por la Distribución (Gumbel) de Valores Extremos, <span class="math notranslate nohighlight">\(-\ln\left(-\ln\left(P\right)\right)\)</span> vs <span class="math notranslate nohighlight">\(x_{ML}\)</span>.</p></li>
+<li><p>Graficar los intervalos de confianza.</p></li>
+</ul>
+</li>
+</ul>
+<p>La función <code class="docutils literal notranslate"><span class="pre">gumbelPlot()</span></code>, presenta una implementación del prodimiento para construír un gráfico de Gumbel.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gumbelPlot</span><span class="p">(</span><span class="n">df</span><span class="p">:</span><span class="nb">str</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">gamma</span><span class="p">:</span><span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">delta</span><span class="p">:</span><span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">ax</span><span class="o">==</span><span class="kc">None</span><span class="p">:</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+    <span class="c1">#### Perform work on data set using the ECDF</span>
+    <span class="n">xSorted</span><span class="p">,</span> <span class="n">ecdf</span> <span class="o">=</span> <span class="n">eCDF</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>                 <span class="c1"># ecdf</span>
+    <span class="n">redVar</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">ecdf</span><span class="p">))</span>    <span class="c1"># reduced variable</span>
+
+    <span class="c1">#### Fit the distribution to the data set</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">gamma</span><span class="o">==</span><span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">delta</span><span class="o">==</span><span class="kc">None</span><span class="p">)):</span>
+        <span class="n">lamb</span><span class="p">,</span> <span class="n">delta</span> <span class="o">=</span> <span class="n">fitEVml</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>           <span class="c1"># Maximum Likelihood</span>
+    <span class="n">xML</span> <span class="o">=</span> <span class="n">delta</span><span class="o">*</span><span class="n">redVar</span> <span class="o">+</span> <span class="n">lamb</span>               <span class="c1"># x-value estimation</span>
+    
+    <span class="c1">#### plot data</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xSorted</span><span class="p">,</span> <span class="n">redVar</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>    <span class="c1"># ECDF</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xML</span><span class="p">,</span> <span class="n">redVar</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>                                        <span class="c1"># EV-Distribution</span>
+    
+    <span class="c1">#### plot confidence interval</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="n">SE</span> <span class="o">=</span> <span class="n">calcSE</span><span class="p">(</span><span class="n">xML</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+    <span class="n">xmin</span> <span class="o">=</span> <span class="n">xML</span> <span class="o">-</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">SE</span>
+    <span class="n">xmax</span> <span class="o">=</span> <span class="n">xML</span> <span class="o">+</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">SE</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span> <span class="n">redVar</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>                          <span class="c1"># EV-Distribution min 95%CI</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xmax</span><span class="p">,</span> <span class="n">redVar</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>                          <span class="c1"># EV-Distribution max 95%CI</span>
+
+    <span class="c1">#### plot layout</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Reduced variable&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x (size, length, etc.)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">&quot;Gumbel params.&quot;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span>
+                <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;subfigure fraction&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\lambda =$</span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lamb</span><span class="p">),</span>
+                <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.80</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;subfigure fraction&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\delta =$</span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">delta</span><span class="p">),</span>
+                <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;subfigure fraction&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ejemplo-de-aplicacion-de-analisis-de-valores-extremos">
+<h1>Ejemplo de aplicación de Análisis de Valores Extremos<a class="headerlink" href="#ejemplo-de-aplicacion-de-analisis-de-valores-extremos" title="Permalink to this heading">#</a></h1>
+<p>Los datos utilizados en este ejemplo se tomaron de la norma ASTM E-2283. Los datos están constituidos por 24 mediciones del tamaño más grande de inclusión observada en seis especímenes de acero (specimen: 1-6), en un procedimiento que se repite cuatro veces (run: A - D).</p>
+<p>Debajo, los datos se ponen en un formato Pandas DataFrame, y se utiliza la función <code class="docutils literal notranslate"><span class="pre">gumbelPlot()</span></code> para ajustar la Distribución (Gumbel) de Valores Extremos a los datos, y trazar un gráfico de Gumbel para los mismos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Datos de la norma ASTM-E2283</span>
+<span class="n">specimen</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">run</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">]</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">40.29</span><span class="p">,</span> <span class="mf">37.24</span><span class="p">,</span> <span class="mf">29.03</span><span class="p">,</span> <span class="mf">52.46</span><span class="p">,</span> <span class="mf">62.21</span><span class="p">,</span> <span class="mf">33.98</span><span class="p">,</span> <span class="mf">30.73</span><span class="p">,</span> <span class="mf">37.43</span><span class="p">,</span> <span class="mf">35.00</span><span class="p">,</span> <span class="mf">44.82</span><span class="p">,</span> <span class="mf">66.13</span><span class="p">,</span> <span class="mf">48.55</span><span class="p">,</span> <span class="mf">73.48</span><span class="p">,</span> <span class="mf">44.79</span><span class="p">,</span> <span class="mf">70.87</span><span class="p">,</span> <span class="mf">59.83</span><span class="p">,</span> <span class="mf">22.18</span><span class="p">,</span> <span class="mf">64.32</span><span class="p">,</span> <span class="mf">78.91</span><span class="p">,</span> <span class="mf">46.53</span><span class="p">,</span> <span class="mf">94.28</span><span class="p">,</span> <span class="mf">49.15</span><span class="p">,</span> <span class="mf">82.39</span><span class="p">,</span> <span class="mf">37.43</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construir el DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">run</span><span class="p">,</span> <span class="n">specimen</span><span class="p">,</span> <span class="n">Y</span><span class="p">)),</span>
+                     <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;run&#39;</span><span class="p">,</span> <span class="s1">&#39;specimen&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mostrar el DataFrame</span>
+<span class="c1">#df.sort_values(by=&#39;Y&#39;, ascending=True, inplace=True) # uncomment for sorting by size</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>run</th>
+      <th>specimen</th>
+      <th>Y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A</td>
+      <td>1</td>
+      <td>40.29</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>A</td>
+      <td>2</td>
+      <td>37.24</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>A</td>
+      <td>3</td>
+      <td>29.03</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>A</td>
+      <td>4</td>
+      <td>52.46</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>A</td>
+      <td>5</td>
+      <td>62.21</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>A</td>
+      <td>6</td>
+      <td>33.98</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>B</td>
+      <td>1</td>
+      <td>30.73</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>B</td>
+      <td>2</td>
+      <td>37.43</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>B</td>
+      <td>3</td>
+      <td>35.00</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>B</td>
+      <td>4</td>
+      <td>44.82</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>B</td>
+      <td>5</td>
+      <td>66.13</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>B</td>
+      <td>6</td>
+      <td>48.55</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>C</td>
+      <td>1</td>
+      <td>73.48</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>C</td>
+      <td>2</td>
+      <td>44.79</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>C</td>
+      <td>3</td>
+      <td>70.87</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>C</td>
+      <td>4</td>
+      <td>59.83</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>C</td>
+      <td>5</td>
+      <td>22.18</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>C</td>
+      <td>6</td>
+      <td>64.32</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>D</td>
+      <td>1</td>
+      <td>78.91</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>D</td>
+      <td>2</td>
+      <td>46.53</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>D</td>
+      <td>3</td>
+      <td>94.28</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>D</td>
+      <td>4</td>
+      <td>49.15</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>D</td>
+      <td>5</td>
+      <td>82.39</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>D</td>
+      <td>6</td>
+      <td>37.43</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construir el gráfico de Gumbel (con estimación de parámetros)</span>
+<span class="n">gumbelPlot</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gumbel distribution params.
+lambda: 43.0562
+delta : 14.9813
+*ML est.
+</pre></div>
+</div>
+<img alt="../_images/4893ef8a805a5c9ac5e739a4e2af02e65f72dc2a9a9b65d27bcd1455cc7e7b49.png" src="../_images/4893ef8a805a5c9ac5e739a4e2af02e65f72dc2a9a9b65d27bcd1455cc7e7b49.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="referencias">
+<h1>Referencias<a class="headerlink" href="#referencias" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Norma ASTM: <a class="reference external" href="https://www.astm.org/e2283-08r19.html">ASTM E2283: Standard Practice for Extreme Value Analysis of Nonmetallic Inclusions in Steel and Other Microstructural Features</a></p></li>
+<li><p>Libro: <a class="reference external" href="https://www.sciencedirect.com/book/9780080440644/metal-fatigue">Y. Murakami, Metal Fatigue (2002)</a></p></li>
+<li><p>Página Wikipedia: <a class="reference external" href="https://en.wikipedia.org/wiki/Gumbel_distribution">Gumbel Distribution</a></p></li>
+<li><p>Documentación Scipy: <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.gumbel_r.html">scipy.stats.gumbel_r</a></p></li>
+</ul>
+</section>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -385,7 +1019,27 @@ document.write(`
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Estadística de Valores Extremos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contexto-metalurgico">Contexto metalúrgico</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-de-analisis-de-valores-extremos">Fundamentos de Análisis de Valores Extremos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-empirica">Distribución Empírica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-gumbel-de-valores-extremos">Distribución (Gumbel) de Valores Extremos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-de-densidad-de-probabilidad-pdf-y-densidad-acumulada-cdf">Funciones de densidad de probabilidad (PDF) y densidad acumulada (CDF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimacion-de-parametros-de-la-distribucion-metodo-de-momentos">Estimación de parámetros de la distribución (Método de momentos)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimacion-de-parametros-de-la-distribucion-metodo-de-maxima-verosimilitud">Estimación de parámetros de la distribución (Método de máxima verosimilitud)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intervalo-de-confianza-para-la-estimaciones-de-tamano-de-caracteristicas-microestructurales">Intervalo de confianza para la estimaciones de tamaño de características microestructurales</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-gumbel">Gráfico de Gumbel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linealizacion-de-la-funcion-de-probabilidad-acumulada">Linealización de la función de probabilidad acumulada:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion-de-un-grafico-de-gumbel">Construcción de un gráfico de Gumbel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-aplicacion-de-analisis-de-valores-extremos">Ejemplo de aplicación de Análisis de Valores Extremos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referencias</a></li>
 </ul>
 
   </nav></div>
