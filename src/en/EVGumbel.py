@@ -1,17 +1,35 @@
-#!/usr/bin/env python
-# coding: utf-8
+# ---
+# jupyter:
+#   jupytext:
+#     formats: ipynb,py:percent
+#     text_representation:
+#       extension: .py
+#       format_name: percent
+#       format_version: '1.3'
+#       jupytext_version: 1.15.2
+#   kernelspec:
+#     display_name: Python 3 (ipykernel)
+#     language: python
+#     name: python3
+# ---
 
-# In[1]:
+# %% [markdown]
+# # Extreme Value Statistics
+#
+# **Dr. Edgar Ivan Castro Cedeño**
+#
+# [edgar.castro@cinvestav.mx](mailto:edgar.castro@cinvestav.mx)
 
-
+# %%
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.stats import gumbel_r
 
-
+# %% [markdown]
 # # Metallurgical context
 
+# %% [markdown]
 # Extreme value statistics is a branch of statistics dealing with assesing the probability of occurence of an event more extreme than any previously observed one.
 # 
 # In a metallurgical quality and materials characterization context, an extreme event would be the probability that the largest size of a microstructural feature (e.g., inclusions, graphite flakes, precipitates, porosities, cavities, etc.) in a product be larger than a given threshold value. In this context, the (Gumbel) Extreme Value distribution is used to estimate these probabilities.
@@ -24,12 +42,15 @@ from scipy.stats import gumbel_r
 # 
 # A **References / Further Reading** section is provided at the end of this notebook.
 
+# %% [markdown]
 # # Fundamentals for Extreme Value Analysis
 
 # In this section, the empirical cumulative density function is first discussed. Then the (Gumbel) Extreme Value Distribution is presented, along with two methodologies for estimating the distribution parameters (moments method and maximum likelihood method). Finally, the procedure for the construction of a Gumbel plot is presented.
 
+# %% [markdown]
 # ## Empirical Cumulative Density Function
 
+# %% [markdown]
 # Each of the $N$ measurements of size of a microstructural feature can be represented as $x_i$, where $1 \le i \le N$.
 # 
 # To estimate the __Empirical Cumulative Density Function (ECDF)__ the data of measurements of size of a microstructural feature, $x_i$,  are ordered in ascending order so that:
@@ -42,9 +63,7 @@ from scipy.stats import gumbel_r
 # 
 # The function `eCDF()`, presents an implementation of the ECDF:
 
-# In[2]:
-
-
+# %%
 def eCDF(df:str | pd.DataFrame):
     """ 
     empirical cumulative distribution function for inclusion size,
@@ -77,10 +96,13 @@ def eCDF(df:str | pd.DataFrame):
     return Ysorted, ecdf
 
 
+# %% [markdown]
 # ## (Gumbel) Extreme Value Distribution
 
+# %% [markdown]
 # ### Probability Density Function and Cumulative Density Functions
 
+# %% [markdown]
 # 
 # 
 # The __Probability Density Function (PDF)__ for the two-parameter (Gumbel) Extreme Value Distribution is given by:
@@ -100,8 +122,10 @@ def eCDF(df:str | pd.DataFrame):
 # 
 # - $\delta$: scale parameter of the (Gumbel) Extreme Value distribution function
 
+# %% [markdown]
 # ### Estimation of distribution parameters (Moments Method)
 
+# %% [markdown]
 # The parameters of the (Gumbel) Extreme Value distribution can be estimated with the following equations:
 # 
 # $$\delta_{mom} = \frac{s \, \sqrt{6}}{\pi}$$
@@ -121,9 +145,8 @@ def eCDF(df:str | pd.DataFrame):
 # 
 # The function `fitEVmom()`, presents an implementation of the procedure for estimating the Extreme Value distribution parameters with the Moments Method:
 
-# In[3]:
 
-
+# %%
 def fitEVmom(df:str | pd.DataFrame, verbose:bool = True):
     """
     Fit (Gumbel) Extreme Value distribution to measurements
@@ -162,8 +185,10 @@ def fitEVmom(df:str | pd.DataFrame, verbose:bool = True):
     return lamb, delta    
 
 
+# %% [markdown]
 # ### Estimation of distribution parameters (Maximum Likelihood Method)
 
+# %% [markdown]
 # The method of maximum likelihood is based on the approach that the best estimation of distribution parameters are those that maximize the likelihood of obtaining the set of measurements of the given microstructural feature. This is done using a numerical method sought for determining the values of the distribution parameters which maximize the sum of the logarithms of the probability density function, when evaluating the data set. When the natural logarithm is chosen, the optimization function is of the form:
 # 
 # $$LL=\sum_{i=1}^{N} \ln \left(f\left(x_i, \lambda, \delta \right) \right)$$
@@ -172,9 +197,8 @@ def fitEVmom(df:str | pd.DataFrame, verbose:bool = True):
 # 
 # The function `fitEVml()`, presents an implementation of the procedure for estimating the Extreme Value distribution parameters with the Maximum Likelihood Method. This implementation is simply a wrapper of one of the methods of the `gumbel_r` class from the `scipy.stats` library:
 
-# In[4]:
 
-
+# %%
 def fitEVml(df:str | pd.DataFrame, verbose:bool = True):
     """
     Fit (Gumbel) Extreme Value distribution to measurements
@@ -212,8 +236,10 @@ def fitEVml(df:str | pd.DataFrame, verbose:bool = True):
     return lamb, delta
 
 
+# %% [markdown]
 # ### Confidence interval of estimations of sizes of microstructural features
 
+# %% [markdown]
 # The standard error of any microstructural feature of size $x$, based on the maximum likelihood method is given by:
 # 
 # $$\mathrm{SE}(x) = \delta \sqrt{\frac{1.109+0.514\,y+0.608\,y^2}{N}}$$
@@ -236,9 +262,8 @@ def fitEVml(df:str | pd.DataFrame, verbose:bool = True):
 # 
 # 
 
-# In[5]:
 
-
+# %%
 def calcSE(x:float, lamb:float, delta:float, N:int):
     """
     Estimate the Standard Error (SE) of size estimation for
@@ -266,12 +291,16 @@ def calcSE(x:float, lamb:float, delta:float, N:int):
     return SE
 
 
+# %% [markdown]
 # ## Gumbel plot
 
+# %% [markdown]
 # The Gumbel plot is a visualization tool developped in the times when computers where not readily available for the general public. Originally, these kind of plots were made by hand-plotting the linearized (Gumbel) Extreme Value Cumulative Distribution Function and the data-points on 2-cycle log-probability paper.
 
+# %% [markdown]
 # ### Linearization of the Cumulative Density Function:
 
+# %% [markdown]
 # First, the __reduced variable__, $y$, is defined as:
 # 
 # $$y = \frac{x - \lambda}{\delta}$$
@@ -292,9 +321,8 @@ def calcSE(x:float, lamb:float, delta:float, N:int):
 # 
 # The function `calcRedVar()`, presents an implementation of the procedure for linealizing the Cumulative Density Function of the (Gumbel) Extreme Value distribution:
 
-# In[6]:
 
-
+# %%
 def calcRedVar(F:float):
     """ 
     reduced variable, y, used in the procedure of linearization 
@@ -314,6 +342,7 @@ def calcRedVar(F:float):
     return y
 
 
+# %% [markdown]
 # Once the best estimates for the location $(\lambda)$ and scale $(\delta)$ parameters are determined, the expected maximum size of the microstructural feature can be estimated for a given probability using the equation:
 # 
 # $$x = \delta y + \lambda$$
@@ -324,31 +353,36 @@ def calcRedVar(F:float):
 # 
 # This corresponds to the equation of a straight line, where the slope is given by the scale parameter $(\delta)$, and the intercept is given by the location parameter $(\lambda)$.
 
+# %% [markdown]
 # ### Construction of the Gumbel plot
 
+# %% [markdown]
 # The development of the Gumbel plot preceeds the advent of computer methods. As such, these kind of plots were useful to enable the estimation of (Gumbel) Extreme Value distribution parameters by graphical methods. Today, they serve as a tool for verifying the goodness-of-fit of the distribution parameters against the set of data.
 # 
 # The steps for constructing one of such plots are as follows:
 
+# %% [markdown]
 # - Perform work on data set using the Empirical Cumulative distribution function:
 #     - Sort the data of measurements of size of microstructural feature, $x$, in ascending order.
 #     - Estimate the empirical cumulative distribution function (ECDF) of the data, $P$.
 #     - Estimate the value of the reduced variable, for the ECDF calculated in the previous step, $y=-\ln\left(-\ln\left(P\right)\right)$.
 
+# %% [markdown]
 # - Fit the (Gumbel) Extreme value distribution to the data set using a numerical method:
 #     - Use either Moments Method or Maximum Likelihood method for estimation of the distribution parameters, $\delta$ and $\lambda$.
 #     - Obtain the estimates of size of microstructural feature, $x_{ML}$, for the given empirical probabilities of the data, $P$.
 
+# %% [markdown]
 # - Plot the data
 #     - Plot the linealized empirical distribution function vs the sorted size measurements, $-\ln\left(-\ln\left(P\right)\right)$ vs $x$.
 #     - Plot the linealized empirical distribution function vs the Extreme Value size estimations, $-\ln\left(-\ln\left(P\right)\right)$ vs $x_{ML}$.
 #     - Plot the lines representing the confidence interval of the Extreme Value estimations.
 
+# %% [markdown]
 # The function `gumbelPlot()`, presents an implementation of the procedure for constructing a Gumbel plot:
 
-# In[7]:
 
-
+# %%
 def gumbelPlot(df:str | pd.DataFrame, gamma:float = None, delta:float = None, ax=None):
 
     if ax==None:
@@ -388,46 +422,43 @@ def gumbelPlot(df:str | pd.DataFrame, gamma:float = None, delta:float = None, ax
                 xy=(0.15, 0.75), xycoords='subfigure fraction')
 
 
+# %% [markdown]
 # # Example of application of Extreme Value Analysis
 
+# %% [markdown]
 # The dataset for this example is taken from the ASTM E-2283 standard. The dataset consists of 24 measurements of the largest inclusion found in six steel specimens(specimen: 1 - 6), with the procedure being repeated four times (run: A - D).
 # 
 # Below, the data is put into Pandas DataFrame format, and the function `gumbelPlot()` defined above is used to fit a (Gumbel) Extreme Value Distribution function to the data, and draw a Gumbel plot for the data.
 
-# In[8]:
 
 
+# %%
 # Dataset from ASTM-E2283
 specimen = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]
 run = ['A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'D']
 Y = [40.29, 37.24, 29.03, 52.46, 62.21, 33.98, 30.73, 37.43, 35.00, 44.82, 66.13, 48.55, 73.48, 44.79, 70.87, 59.83, 22.18, 64.32, 78.91, 46.53, 94.28, 49.15, 82.39, 37.43]
 
 
-# In[9]:
-
-
+# %%
 # Construct dataframe
 df = pd.DataFrame(list(zip(run, specimen, Y)),
                      columns=['run', 'specimen', 'Y'])
 
 
-# In[12]:
-
-
+# %%
 # Show the dataframe
 #df.sort_values(by='Y', ascending=True, inplace=True) # uncomment for sorting by size
 display(df)
 
 
-# In[13]:
-
-
+# %%
 # Construct the Gumbel plot (with estimation of parameters)
 gumbelPlot(df)
 
-
+# %% [markdown]
 # # References / Further reading
 
+# %% [markdown]
 # - ASTM Norm: [ASTM E2283: Standard Practice for Extreme Value Analysis of Nonmetallic Inclusions in Steel and Other Microstructural Features](https://www.astm.org/e2283-08r19.html)
 # 
 # - Book: [Y. Murakami, Metal Fatigue (2002)](https://www.sciencedirect.com/book/9780080440644/metal-fatigue)
